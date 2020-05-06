@@ -8,8 +8,6 @@
     <string>com.github.ahousseini-recipes.pkg.3CXPhone</string>
     <key>Input</key>
     <dict>
-      <key>BUNDLE_ID</key>
-      <string>3cxphone14</string>
       <key>NAME</key>
       <string>3CXPhone</string>
     </dict>
@@ -33,13 +31,13 @@
         </dict>
       </dict>
       <dict>
+        <key>Processor</key>
+        <string>AppPkgCreator</string>
         <key>Arguments</key>
         <dict>
           <key>app_path</key>
           <string>%RECIPE_CACHE_DIR%/%NAME%/3CXPhone.app</string>
         </dict>
-        <key>Processor</key>
-        <string>AppPkgCreator</string>
       </dict>
     </array>
   </dict>
