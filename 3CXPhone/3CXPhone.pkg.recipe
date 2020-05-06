@@ -10,6 +10,8 @@
     <dict>
       <key>NAME</key>
       <string>3CXPhone</string>
+      <key>APPNAME</key>
+      <string>3CXPhone.app</string>
     </dict>
     <key>MinimumVersion</key>
     <string>1.0.0</string>
@@ -19,21 +21,11 @@
     <array>
       <dict>
         <key>Processor</key>
-        <string>Copier</string>
-        <dict>
-          <key>source_path</key>
-          <string>%pathname%</string>
-          <key>destination_path</key>
-          <string>%RECIPE_CACHE_DIR%/%NAME%/3CXPhone.app</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>Processor</key>
         <string>AppPkgCreator</string>
         <key>Arguments</key>
         <dict>
           <key>app_path</key>
-          <string>%pathname%</string>
+          <string>%pathname%/%APPNAME%</string>
         </dict>
       </dict>
     </array>
