@@ -24,6 +24,8 @@
         <dict>
           <key>app_path</key>
           <string>%pathname%/Applications/%NAME%.app</string>
+          <key>bundleid</key>
+          <string>3cxphone14</string>
         </dict>
       </dict>
     </array>
