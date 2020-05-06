@@ -60,6 +60,8 @@
           <string>%NAME%-%version%</string>
           <key>pkg_request</key>
           <dict>
+          	<key>id</key>
+          	<string>3cxphone14</string>
             <key>pkgdir</key>
             <string>%RECIPE_CACHE_DIR%</string>
             <key>options</key>
