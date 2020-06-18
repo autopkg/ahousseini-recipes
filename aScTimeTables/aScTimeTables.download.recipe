@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Description</key>
-	<string>Downloads the latest version of aSc TimeTables.</string>
-	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.download.aScTimeTables</string>
-	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>aSc TimeTables</string>
+		<key>Description</key>
+		<string>Downloads the latest version of aSc TimeTables.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.aScTimeTables</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>aSc TimeTables</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>re_pattern</key>
+					<string>http://www.asctimetables.com/download/asctimetables[0-9\_]*.dmg</string>
+					<key>result_output_var_name</key>
+					<string>url</string>
+					<key>url</key>
+					<string>https://www.asctimetables.com/</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLTextSearcher</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/aSc TimeTables.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+		</array>
 	</dict>
-	<key>MinimumVersion</key>
-	<string>1.0.0</string>
-	<key>Process</key>
-	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>http://www.asctimetables.com/download/asctimetables[0-9\_]*.dmg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.asctimetables.com/</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/aSc TimeTables.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-	</array>
-</dict>
 </plist>

@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Description</key>
-	<string>Downloads the latest version of edulo and creates a package.</string>
-	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.pkg.edulo</string>
-	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Edulo</string>
-		<key>NAME</key>
-		<string>edulo</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>1.0.0</string>
-	<key>ParentRecipe</key>
-	<string>com.github.ahousseini-recipes.download.edulo</string>
-	<key>Process</key>
-	<array>
+		<key>Description</key>
+		<string>Downloads the latest version of edulo and creates a package.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.pkg.edulo</string>
+		<key>Input</key>
 		<dict>
-			<key>Processor</key>
-			<string>AppPkgCreator</string>
+			<key>APP_FILENAME</key>
+			<string>Edulo</string>
+			<key>NAME</key>
+			<string>edulo</string>
 		</dict>
-	</array>
-</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>ParentRecipe</key>
+		<string>com.github.ahousseini-recipes.download.edulo</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Processor</key>
+				<string>AppPkgCreator</string>
+			</dict>
+		</array>
+	</dict>
 </plist>
