@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Comment</key>
+		<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+		<key>Description</key>
+		<string>Downloads the latest version of MindView.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.MindView</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>MindView</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>filename</key>
+					<string>%NAME%.dmg</string>
+					<key>url</key>
+					<string>http://cdn.matchware.com/demos/mindview7mac_en.dmg</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: MatchWare A/S (T5899GG823)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+					<key>input_path</key>
+					<string>%pathname%/MindView 7.pkg</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/unpack</string>
+					<key>flat_pkg_path</key>
+					<string>%pathname%/MindView 7.pkg</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+				<key>Processor</key>
+				<string>FlatPkgUnpacker</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/payload</string>
+					<key>pkg_payload_path</key>
+					<string>%RECIPE_CACHE_DIR%/unpack/MindView-7.pkg/Payload</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+				<key>Processor</key>
+				<string>PkgPayloadUnpacker</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%RECIPE_CACHE_DIR%/payload/MindView 7/MindView.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
