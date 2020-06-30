@@ -42,7 +42,7 @@
 						<string>Apple Root CA</string>
 					</array>
 					<key>input_path</key>
-					<string>%pathname%/SketchBook_v8.7.1_mac.pkg</string>
+					<string>%pathname%/SketchBook*.pkg</string>
 				</dict>
 				<key>Processor</key>
 				<string>CodeSignatureVerifier</string>
@@ -53,7 +53,7 @@
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/unpack</string>
 					<key>flat_pkg_path</key>
-					<string>%pathname%/SketchBook_v8.7.1_mac.pkg</string>
+					<string>%pathname%/SketchBook*.pkg</string>
 					<key>purge_destination</key>
 					<true/>
 				</dict>
