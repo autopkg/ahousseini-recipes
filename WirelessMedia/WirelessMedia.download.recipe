@@ -41,8 +41,6 @@
 					<string>https://klickandshow.com/%url%</string>
 				</dict>
 				<key>Processor</key>
-				<string>AppPkgCreator</string>
-				<key>Processor</key>
 				<string>URLDownloader</string>
 			</dict>
 			<dict>
