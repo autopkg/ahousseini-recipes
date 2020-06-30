@@ -7,7 +7,7 @@
 		<key>Description</key>
 		<string>Downloads the latest version of Dash.</string>
 		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.Dash</string>
+		<string>com.github.ahousseini-recipes.download.Dash5</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>

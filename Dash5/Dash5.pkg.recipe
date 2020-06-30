@@ -7,7 +7,7 @@
 		<key>Description</key>
 		<string>Downloads the latest version of Dash and creates a package.</string>
 		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.pkg.Dash</string>
+		<string>com.github.ahousseini-recipes.pkg.Dash5</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>
