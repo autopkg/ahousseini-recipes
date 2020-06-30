@@ -20,11 +20,17 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
+					<key>re_pattern</key>
+					<string>https://s3.eu-central-1.amazonaws.com/download.seadrive.org/seadrive-[0-9\.]*.dmg</string>
+					<key>result_output_var_name</key>
+					<string>url</string>
 					<key>url</key>
-					<string>https://download.seadrive.org/seadrive-2.0.2.dmg</string>
+					<string>https://www.seafile.com/en/download/</string>
 				</dict>
+				<key>Processor</key>
+				<string>URLTextSearcher</string>
+			</dict>
+			<dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
 			</dict>
