@@ -22,6 +22,8 @@
 				<dict>
 					<key>github_repo</key>
 					<string>bardsoftware/ganttproject</string>
+					<key>asset_regex</key>
+					<string>^ganttproject.*?dmg$</string>
 				</dict>
 				<key>Processor</key>
 				<string>GitHubReleasesInfoProvider</string>
