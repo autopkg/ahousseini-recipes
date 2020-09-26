@@ -21,7 +21,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>appcast_url</key>
-					<string>https://starface.de/macclient/appcast64.xml</string>
+					<string>https://www.starface-cdn.de/starface/clients/mac/appcast.xml</string>
 				</dict>
 				<key>Processor</key>
 				<string>SparkleUpdateInfoProvider</string>
