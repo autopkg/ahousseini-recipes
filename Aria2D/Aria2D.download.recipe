@@ -20,11 +20,11 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>github_repo</key>
-					<string>xjbeta/Aria2D</string>
+					<key>appcast_url</key>
+					<string>https://raw.githubusercontent.com/xjbeta/AppUpdaterAppcasts/master/Aria2D/Appcast.xml</string>
 				</dict>
 				<key>Processor</key>
-				<string>GitHubReleasesInfoProvider</string>
+				<string>SparkleUpdateInfoProvider</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>

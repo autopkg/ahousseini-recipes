@@ -12,8 +12,6 @@
 		<dict>
 			<key>NAME</key>
 			<string>Aria2D</string>
-			<key>BUNDLE_ID</key>
-			<string>com.xjbeta.Aria2D</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
@@ -21,6 +19,17 @@
 		<string>com.github.ahousseini-recipes.download.Aria2D</string>
 		<key>Process</key>
 		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
 			<dict>
 				<key>Processor</key>
 				<string>AppPkgCreator</string>
