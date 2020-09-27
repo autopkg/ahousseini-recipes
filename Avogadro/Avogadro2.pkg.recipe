@@ -14,7 +14,7 @@
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
 		<key>ParentRecipe</key>
-		<string>com.github.dcoobs.download.Avogadro2</string>
+		<string>com.github.dcoobs-recipes.download.Avogadro2</string>
 		<key>Process</key>
 		<array>
 			<dict>
