@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Maxima.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.Maxima</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Maxima</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>SOURCEFORGE_PROJECT_NAME</key>
+					<string>maxima</string>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.n8felton.shared/SourceForgeBestReleaseURLProvider</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>filename</key>
+					<string>%NAME%.dmg</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/Maxima.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
