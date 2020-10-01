@@ -22,6 +22,12 @@
 				<dict>
 					<key>filename</key>
 					<string>%NAME%.zip</string>
+					<key>curl_opts</key>
+					<array>
+						<dict>
+							<key>-L</key>
+						</dict>
+					</array>
 					<key>url</key>
 					<string>https://www.nchsoftware.com/chart/clickchartspmaci.zip</string>
 				</dict>
