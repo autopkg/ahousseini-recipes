@@ -18,19 +18,17 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
+					<key>SOURCEFORGE_PROJECT_NAME</key>
+					<string>maxima</string>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.n8felton.shared/SourceForgeBestReleaseURLProvider</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
 					<key>filename</key>
 					<string>%NAME%.dmg</string>
-					<key>url</key>
-					<string>https://sourceforge.net/projects/maxima/files/latest/download</string>
-					<key>curl_opts</key>
-					<array>
-						<string>-L</string>
-					</array>
-					<key>request_headers</key>
-					<dict>
-						<key>user-agent</key>
-						<string>AutoPkg/1.0 (Macintosh; Intel Mac OS X 10.15.7) curl/7.64.1</string>
-					</dict>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
