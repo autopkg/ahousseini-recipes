@@ -32,16 +32,16 @@ class HomebrewCaskURL(Processor):
             "required": True,
             "description": (
                 "Name of cask to fetch, as would be given to the 'brew' command. Example: 'firefox'"
-            ),
-        }
-    }
+			),
+		}
+	}
 	output_variables = {
         "url": {
         	"description": (
         		"URL for the Cask's download."
-        	)
-        }
-    }
+			)
+		}
+	}
     
 	description = __doc__
     
@@ -49,8 +49,8 @@ class HomebrewCaskURL(Processor):
 		ssl._create_default_https_context = ssl._create_unverified_context
 		
 		homebrew_api_baseurl = (
-            "https://formulae.brew.sh/api/cask"
-        )
+			"https://formulae.brew.sh/api/cask"
+		)
     
 		cask_url = f"{homebrew_api_baseurl}/{self.env['cask_name']}.json"
 		try:
