@@ -10,8 +10,6 @@
 		<string>com.github.ahousseini-recipes.download.ThycoticPAM</string>
 		<key>Input</key>
 		<dict>
-			<key>APP_FILENAME</key>
-			<string>ThycoticPAM</string>
 			<key>NAME</key>
 			<string>ThycoticPAM</string>
 		</dict>
