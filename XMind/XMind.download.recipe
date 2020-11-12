@@ -20,16 +20,13 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-					<key>request_headers</key>
-					<dict>
-						<key>user-agent</key>
-						<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36</string>
-					</dict>
-					<key>url</key>
-					<string>https://www.xmind.net/xmind/download/</string>
+					<key>cask_name</key>
+					<string>xmind</string>
 				</dict>
+				<key>Processor</key>
+				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			</dict>
+			<dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
 			</dict>
