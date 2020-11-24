@@ -34,7 +34,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>pkg_payload_path</key>
-					<string>%RECIPE_CACHE_DIR%/unpack/mBlock.pkg/Payload</string>
+					<string>%RECIPE_CACHE_DIR%/unpack/cc.mblock.pkg/Payload</string>
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/version_check</string>
 				</dict>
@@ -45,7 +45,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>input_plist_path</key>
-					<string>%RECIPE_CACHE_DIR%/version_check/Applications/Makeblock/mblock.app/Contents/Info.plist</string>
+					<string>%RECIPE_CACHE_DIR%/version_check/mBlock.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
 					<string>CFBundleShortVersionString</string>
 				</dict>
