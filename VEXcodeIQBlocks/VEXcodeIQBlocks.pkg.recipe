@@ -25,7 +25,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>flat_pkg_path</key>
-					<string>%pathname%/VEXcode IQ Blocks.pkg</string>
+					<string>%pathname%/VEXcode IQ.pkg</string>
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/unpack</string>
 				</dict>
@@ -36,7 +36,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>pkg_payload_path</key>
-					<string>%RECIPE_CACHE_DIR%/unpack/VEXcodeIQBlocks.pkg/Payload</string>
+					<string>%RECIPE_CACHE_DIR%/unpack/VEXcodeIQ.pkg/Payload</string>
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/version_check</string>
 				</dict>
@@ -47,7 +47,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>input_plist_path</key>
-					<string>%RECIPE_CACHE_DIR%/version_check/VEXcode IQ Blocks.app/Contents/Info.plist</string>
+					<string>%RECIPE_CACHE_DIR%/version_check/VEXcode IQ.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
 					<string>CFBundleVersion</string>
 				</dict>
