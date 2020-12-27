@@ -15,54 +15,52 @@
 # limitations under the License.
 """See docstring for CallbarVersionProvider class"""
 
-import os, ssl, json
-import urllib.request
-import urllib.error
-import urllib.parse
+import ssl, certifi, re, json
+from urllib.request import urlopen
 
-from autopkglib import Processor  # pylint: disable=import-error
 
-APPCAST_URL = "https://downloadcallbar.talkdesk.com/release_metadata.json"
+from autopkglib import Processor, ProcessorError
+
 
 __all__ = ["CallbarVersionProvider"]
 
+
+APPCAST_URL = "https://downloadcallbar.talkdesk.com/release_metadata.json"
+
+
 class CallbarVersionProvider(Processor):
+
 	"""Provides the version for the latest Callbar release."""
 
 	input_variables = {
-        "appcast_url": {"required": False, "description": "Default is %s" % APPCAST_URL,},
-    }
-
-	output_variables = {
-        "url": {
-        	"description": (
-        		"URL to the latest Callbar release."
-			)
+		"appcast_url": {
+			"required": False,
+			"description": "Default is %s" % APPCAST_URL
 		}
 	}
 
+	output_variables = {
+		"version": {
+			"description": (
+				"Version of the latest Callbar release."
+			)
+		}
+	}
 	description = __doc__
 
-	def main(self):
-		ssl._create_default_https_context = ssl._create_unverified_context
+	def get_version(self, appcast_url):
 
 		try:
-			urlobj = urllib.request.urlopen(APPCAST_URL)
-		except urllib.error.HTTPError as err:
-			raise ProcessorError(f"Error opening URL {APPCAST_URL}: {err}")
+			jsonData = json.loads(urlopen(appcast_url, context=ssl.create_default_context(cafile=certifi.where())).read())
+			return str(jsonData['version'])
+		except BaseException as err:
+			raise Exception("Can't read %s: %s" % (appcast_url, err))
 
-		formula_data = urlobj.read()
-
-		with urllib.request.urlopen(APPCAST_URL) as url:
-			data = json.loads(url.read().decode())
-		parsed = (data['version'])
-
-		self.env["version"] = parsed
-
-		self.output(
-			f"Got version {self.env['version']}:"
-		)
+	def main(self):
+		appcast_url = self.env.get("appcast_url", APPCAST_URL)
+		self.env["version"] = self.get_version(appcast_url)
+		self.output("Version number %s" % self.env["version"])
 
 if __name__ == "__main__":
-	PROCESSOR = CallbarVersionProvider()
-	PROCESSOR.execute_shell()
+	processor = CallbarVersionProvider()
+	processor.execute_shell()
