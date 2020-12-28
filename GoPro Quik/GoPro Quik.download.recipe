@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of GoPro Quik.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.GoProQuik</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>GoPro Quik</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>cask_name</key>
+					<string>quik</string>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>filename</key>
+					<string>%NAME%.dmg</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%pathname%/GoPro Quik.pkg</string>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: GoPro, Inc. (5R97Y7Q7FD)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+</plist>
