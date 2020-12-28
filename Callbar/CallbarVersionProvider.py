@@ -15,52 +15,45 @@
 # limitations under the License.
 """See docstring for CallbarVersionProvider class"""
 
-import ssl, certifi, re, json
-from urllib.request import urlopen
+import json
 
-
-from autopkglib import Processor, ProcessorError
-
+from autopkglib import URLGetter
 
 __all__ = ["CallbarVersionProvider"]
 
 
-APPCAST_URL = "https://downloadcallbar.talkdesk.com/release_metadata.json"
+class CallbarVersionProvider(URLGetter):
+    """Provides the version for the latest Callbar release."""
 
+    description = __doc__
+    input_variables = {
+        "appcast_url": {
+            "required": False,
+            "description": "URL to Callbar manifest"
+        }
+    }
 
-class CallbarVersionProvider(Processor):
+    output_variables = {
+        "version": {
+            "description": (
+                "Version of the latest Callbar release."
+            )
+        }
+    }
 
-	"""Provides the version for the latest Callbar release."""
+    def main(self):
+        """Grab version from manifest"""
 
-	input_variables = {
-		"appcast_url": {
-			"required": False,
-			"description": "Default is %s" % APPCAST_URL
-		}
-	}
+        appcast_url = "https://downloadcallbar.talkdesk.com/release_metadata.json"
 
-	output_variables = {
-		"version": {
-			"description": (
-				"Version of the latest Callbar release."
-			)
-		}
-	}
-	description = __doc__
+        manifest = self.download(appcast_url)
 
-	def get_version(self, appcast_url):
+        data = json.loads(manifest.decode('utf-8'))
+        parsed = (data['version'])
 
-		try:
-			jsonData = json.loads(urlopen(appcast_url, context=ssl.create_default_context(cafile=certifi.where())).read())
-			return str(jsonData['version'])
-		except BaseException as err:
-			raise Exception("Can't read %s: %s" % (appcast_url, err))
-
-	def main(self):
-		appcast_url = self.env.get("appcast_url", APPCAST_URL)
-		self.env["version"] = self.get_version(appcast_url)
-		self.output("Version number %s" % self.env["version"])
+        self.env["version"] = parsed
+        self.output("Version number %s" % self.env["version"])
 
 if __name__ == "__main__":
-	processor = CallbarVersionProvider()
-	processor.execute_shell()
+    processor = CallbarVersionProvider()
+    processor.execute_shell()
