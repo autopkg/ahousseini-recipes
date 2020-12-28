@@ -8,7 +8,7 @@ To use these processors, add the processor like this:
 
 ## Description
 
-An AutoPkg processor which reads the download url from the Homebrew Cask API.
+An AutoPkg processor which reads the download url from the [Homebrew Cask API](https://formulae.brew.sh/docs/api/).
 
 ## Input Variables
 - **cask\_name:**
