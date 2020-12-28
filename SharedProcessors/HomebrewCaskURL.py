@@ -15,60 +15,49 @@
 # limitations under the License.
 """See docstring for HomebrewCaskURL class"""
 
-import os, ssl, json
-import urllib.request
-import urllib.error
-import urllib.parse
+import json
 
-from autopkglib import Processor, ProcessorError  # pylint: disable=import-error
+from autopkglib import URLGetter
 
 __all__ = ["HomebrewCaskURL"]
 
-class HomebrewCaskURL(Processor):
-	"""An AutoPkg processor which reads the download url from the Homebrew Cask API."""
+class HomebrewCaskURL(URLGetter):
+    """An AutoPkg processor which reads the download url from the Homebrew Cask API."""
 
-	input_variables = {
+    input_variables = {
         "cask_name": {
             "required": True,
             "description": (
                 "Name of cask to fetch, as would be given to the 'brew' command. Example: 'firefox'"
-			),
-		}
-	}
-	output_variables = {
+            ),
+        }
+    }
+    output_variables = {
         "url": {
-        	"description": (
-        		"URL for the Cask's download."
-			)
-		}
-	}
-    
-	description = __doc__
-    
-	def main(self):
-		ssl._create_default_https_context = ssl._create_unverified_context
-		
-		homebrew_api_baseurl = (
-			"https://formulae.brew.sh/api/cask"
-		)
-    
-		cask_url = f"{homebrew_api_baseurl}/{self.env['cask_name']}.json"
-		try:
-			urlobj = urllib.request.urlopen(cask_url)
-		except urllib.error.HTTPError as err:
-			raise ProcessorError(f"Error opening URL {cask_url}: {err}")
+            "description": (
+                "URL for the Cask's download."
+            )
+        }
+    }
 
-		formula_data = urlobj.read()
+    description = __doc__
 
-		with urllib.request.urlopen(cask_url) as url:
-			data = json.loads(url.read().decode())
-		parsed = (data['url'])
+    def main(self):
+        """Grab url from cask"""
 
-		self.env["url"] = parsed
+        homebrew_api_baseurl = (
+            "https://formulae.brew.sh/api/cask"
+        )
 
-		self.output(
-			f"Got URL {self.env['url']} for cask '{self.env['cask_name']}':"
-		)
+        cask_url = f"{homebrew_api_baseurl}/{self.env['cask_name']}.json"
+
+        manifest = self.download(cask_url)
+
+        data = json.loads(manifest.decode('utf-8'))
+        parsed = (data['url'])
+
+        self.env["url"] = parsed
+        self.output(f"Got URL {self.env['url']} for cask '{self.env['cask_name']}':")
 
 if __name__ == "__main__":
     PROCESSOR = HomebrewCaskURL()
