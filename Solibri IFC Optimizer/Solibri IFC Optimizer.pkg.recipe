@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Solibri IFC Optimizer and creates a package.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.pkg.SolibriIFCOptimizer</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Solibri IFC Optimizer</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>ParentRecipe</key>
+		<string>com.github.ahousseini-recipes.download.SolibriIFCOptimizer</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pkgdirs</key>
+					<dict>
+				</dict>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgRootCreator</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pkgdirs</key>
+					<dict>
+						<key>Library</key>
+						<string>0775</string>
+						<key>Library/Application Support</key>
+						<string>0775</string>
+						<key>Library/Application Support/Solibri IFC Optimizer</key>
+						<string>0775</string>
+					</dict>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgRootCreator</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>destination_path</key>
+					<string>%pkgroot%/Library/Application Support/Solibri IFC Optimizer/Solibri IFC Optimizer Installer.app</string>
+					<key>overwrite</key>
+					<true/>
+					<key>source_path</key>
+					<string>%pathname%/Solibri IFC Optimizer Installer.app</string>
+				</dict>
+				<key>Processor</key>
+				<string>Copier</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>file_content</key>
+					<string>#!/bin/bash
+install_dir=$(dirname "$0")
+"/Library/Application Support/Solibri IFC Optimizer/Solibri IFC Optimizer Installer.app/Contents/MacOS/JavaApplicationStub" -q -Dinstall4j.suppressStdout=true
+</string>
+					<key>file_mode</key>
+					<string>0755</string>
+					<key>file_path</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+				</dict>
+				<key>Processor</key>
+				<string>FileCreator</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/Solibri IFC Optimizer Installer.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>force_pkg_build</key>
+					<true/>
+					<key>pkg_request</key>
+					<dict>
+						<key>chown</key>
+						<array>
+					</array>
+						<key>id</key>
+						<string>com.install4j.SolibriIFCOptimizer</string>
+						<key>options</key>
+						<string>purge_ds_store</string>
+						<key>pkgdir</key>
+						<string>%RECIPE_CACHE_DIR%</string>
+						<key>pkgroot</key>
+						<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+						<key>pkgtype</key>
+						<string>flat</string>
+						<key>scripts</key>
+						<string>Scripts</string>
+					</dict>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgCreator</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
