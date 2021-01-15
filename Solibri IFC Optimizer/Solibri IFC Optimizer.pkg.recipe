@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest version of Solibri IFC Optimizer and creates a package.</string>
+		<string>Creates a package of Solibri IFC Optimizer.</string>
 		<key>Identifier</key>
 		<string>com.github.ahousseini-recipes.pkg.SolibriIFCOptimizer</string>
 		<key>Input</key>
@@ -13,10 +13,12 @@
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
-		<key>ParentRecipe</key>
-		<string>com.github.ahousseini-recipes.download.SolibriIFCOptimizer</string>
 		<key>Process</key>
 		<array>
+			<dict>
+				<key>Processor</key>
+				<string>PackageRequired</string>
+			</dict>
 			<dict>
 				<key>Arguments</key>
 				<dict>
@@ -55,7 +57,7 @@
 					<key>overwrite</key>
 					<true/>
 					<key>source_path</key>
-					<string>%pathname%/Solibri IFC Optimizer Installer.app</string>
+					<string>%PKG%/Solibri IFC Optimizer Installer.app</string>
 				</dict>
 				<key>Processor</key>
 				<string>Copier</string>
@@ -80,7 +82,7 @@ install_dir=$(dirname "$0")
 				<key>Arguments</key>
 				<dict>
 					<key>input_plist_path</key>
-					<string>%pathname%/Solibri IFC Optimizer Installer.app/Contents/Info.plist</string>
+					<string>%PKG%/Solibri IFC Optimizer Installer.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
 					<string>CFBundleShortVersionString</string>
 				</dict>
