@@ -111,9 +111,9 @@ install_dir=$(dirname "$0")
 						<string>flat</string>
 						<key>scripts</key>
 						<string>Scripts</string>
+						<key>pkgname</key>
+						<string>%NAME%-%version%</string>
 					</dict>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
 				</dict>
 				<key>Processor</key>
 				<string>PkgCreator</string>
