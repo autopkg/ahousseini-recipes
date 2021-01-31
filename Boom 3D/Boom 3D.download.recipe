@@ -20,10 +20,17 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
+					<key>cask_name</key>
+					<string>boom-3d</string>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
 					<key>filename</key>
 					<string>%NAME%.dmg</string>
-					<key>url</key>
-					<string>https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D/Update/v1.3.7/Boom_3D_Update.dmg</string>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
