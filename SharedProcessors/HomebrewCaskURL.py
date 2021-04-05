@@ -21,6 +21,7 @@ from autopkglib import URLGetter
 
 __all__ = ["HomebrewCaskURL"]
 
+
 class HomebrewCaskURL(URLGetter):
     """An AutoPkg processor which reads the download url from the Homebrew Cask API."""
 
@@ -32,32 +33,25 @@ class HomebrewCaskURL(URLGetter):
             ),
         }
     }
-    output_variables = {
-        "url": {
-            "description": (
-                "URL for the Cask's download."
-            )
-        }
-    }
+    output_variables = {"url": {"description": ("URL for the Cask's download.")}}
 
     description = __doc__
 
     def main(self):
         """Grab url from cask"""
 
-        homebrew_api_baseurl = (
-            "https://formulae.brew.sh/api/cask"
-        )
+        homebrew_api_baseurl = "https://formulae.brew.sh/api/cask"
 
         cask_url = f"{homebrew_api_baseurl}/{self.env['cask_name']}.json"
 
         manifest = self.download(cask_url)
 
-        data = json.loads(manifest.decode('utf-8'))
-        parsed = (data['url'])
+        data = json.loads(manifest.decode("utf-8"))
+        parsed = data["url"]
 
         self.env["url"] = parsed
         self.output(f"Got URL {self.env['url']} for cask '{self.env['cask_name']}':")
+
 
 if __name__ == "__main__":
     PROCESSOR = HomebrewCaskURL()
