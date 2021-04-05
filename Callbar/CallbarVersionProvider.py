@@ -27,18 +27,11 @@ class CallbarVersionProvider(URLGetter):
 
     description = __doc__
     input_variables = {
-        "appcast_url": {
-            "required": False,
-            "description": "URL to Callbar manifest"
-        }
+        "appcast_url": {"required": False, "description": "URL to Callbar manifest"}
     }
 
     output_variables = {
-        "version": {
-            "description": (
-                "Version of the latest Callbar release."
-            )
-        }
+        "version": {"description": ("Version of the latest Callbar release.")}
     }
 
     def main(self):
@@ -48,11 +41,12 @@ class CallbarVersionProvider(URLGetter):
 
         manifest = self.download(appcast_url)
 
-        data = json.loads(manifest.decode('utf-8'))
-        parsed = (data['version'])
+        data = json.loads(manifest.decode("utf-8"))
+        parsed = data["version"]
 
         self.env["version"] = parsed
         self.output("Version number %s" % self.env["version"])
+
 
 if __name__ == "__main__":
     processor = CallbarVersionProvider()
