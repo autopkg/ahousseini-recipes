@@ -16,19 +16,15 @@
 		<key>Process</key>
 		<array>
 			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>re_pattern</key>
-					<string>https://download-electron.aircall.io/Aircall-[0-9\.]*.zip</string>
-					<key>result_output_var_name</key>
-					<string>url</string>
-					<key>url</key>
-					<string>https://electron.aircall.io/update/osx/0.0.0</string>
-				</dict>
 				<key>Processor</key>
-				<string>URLTextSearcher</string>
+				<string>AircallURLProvider</string>
 			</dict>
 			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>url</key>
+					<string>%url%</string>
+				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
 			</dict>
