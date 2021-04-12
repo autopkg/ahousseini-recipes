@@ -24,8 +24,7 @@ repos:
   - id: check-autopkg-recipes
   - id: forbid-autopkg-overrides
   - id: forbid-autopkg-trust-info
-repos:
-  - repo: https://github.com/python/black
-    rev: 20.8b1
-    hooks:
-      - id: black
+- repo: https://github.com/python/black
+  rev: 20.8b1
+  hooks:
+    - id: black
