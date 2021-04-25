@@ -58,7 +58,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/LogiMgr Installer*.app/Contents/Resources/LogiMgr.mpkg</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/LogiMgr Installer*.app/Contents/Resources/LogiMgr.pkg</string>
 				</dict>
 				<key>Processor</key>
 				<string>FileFinder</string>

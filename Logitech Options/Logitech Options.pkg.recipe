@@ -41,41 +41,21 @@
 				<key>Arguments</key>
 				<dict>
 					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/LogiMgr Installer*.app/Contents/Resources/LogiMgr.mpkg</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/LogiMgr Installer*.app/Contents/Resources/LogiMgr.pkg</string>
 				</dict>
 				<key>Processor</key>
 				<string>FileFinder</string>
 			</dict>
 			<dict>
+				<key>Processor</key>
+				<string>PkgCopier</string>
 				<key>Arguments</key>
 				<dict>
-					<key>target</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-					<key>source</key>
+					<key>source_pkg</key>
 					<string>%found_filename%</string>
-				</dict>
-				<key>Processor</key>
-				<string>FileMover</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				</dict>
-				<key>Processor</key>
-				<string>FileFinder</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 					<key>pkg_path</key>
-					<string>%found_filename%</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 				</dict>
-				<key>Processor</key>
-				<string>FileFinder</string>
 			</dict>
 		</array>
 	</dict>
