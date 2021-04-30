@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Scratch Link.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.ScratchLink</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Scratch Link</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>filename</key>
+					<string>%NAME%.zip</string>
+					<key>url</key>
+					<string>https://downloads.scratch.mit.edu/link/mac.zip</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>archive_path</key>
+					<string>%pathname%</string>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+				<key>Processor</key>
+				<string>Unarchiver</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pattern</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/scratch-link-*.pkg</string>
+				</dict>
+				<key>Processor</key>
+				<string>FileFinder</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: Scratch Foundation, Inc. (W7AR3WMP87)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+					<key>input_path</key>
+					<string>%found_filename%</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
