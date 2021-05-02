@@ -18,23 +18,19 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>re_pattern</key>
-					<string>cmake-([\d\.]+)-Darwin-x86_64.dmg</string>
-					<key>result_output_var_name</key>
-					<string>version</string>
-					<key>url</key>
-					<string>https://cmake.org/files/LatestRelease/</string>
+					<key>asset_regex</key>
+					<string>.*\.dmg$</string>
+					<key>github_repo</key>
+					<string>Kitware/CMake</string>
 				</dict>
 				<key>Processor</key>
-				<string>URLTextSearcher</string>
+				<string>GitHubReleasesInfoProvider</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
 				<dict>
 					<key>filename</key>
 					<string>%NAME%-%version%.dmg</string>
-					<key>url</key>
-					<string>https://cmake.org/files/LatestRelease/cmake-%version%-Darwin-x86_64.dmg</string>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
@@ -42,6 +38,28 @@
 			<dict>
 				<key>Processor</key>
 				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%pathname%/CMake.app</string>
+					<key>requirement</key>
+					<string>identifier "org.cmake.cmake" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = W38PE5Y733</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/CMake.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
 			</dict>
 		</array>
 	</dict>
