@@ -18,19 +18,32 @@
 		<key>Process</key>
 		<array>
 			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>cask_name</key>
-					<string>archi</string>
-				</dict>
 				<key>Processor</key>
-				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+				<string>ArchiLatestGitHubTagProvider</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
 				<dict>
+					<key>string_to_replace</key>
+					<string>release_</string>
+					<key>input_string</key>
+					<string>%tag%</string>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.grahampugh.recipes.commonprocessors/StringReplacer</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>url</key>
+					<string>https://www.archimatetool.com/downloads/archi/</string>
 					<key>filename</key>
 					<string>%NAME%.zip</string>
+					<key>curl_opts</key>
+					<array>
+						<string>--data-binary</string>
+						<string>dl=Archi-Mac-%output_string%.zip</string>
+					</array>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
