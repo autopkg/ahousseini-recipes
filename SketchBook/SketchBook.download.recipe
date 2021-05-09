@@ -20,11 +20,13 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-					<key>url</key>
-					<string>https://update.sketchbook.com/mac/latest</string>
+					<key>cask_name</key>
+					<string>sketchbook</string>
 				</dict>
+				<key>Processor</key>
+				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			</dict>
+			<dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
 			</dict>
