@@ -20,10 +20,21 @@
 			<dict>
 				<key>Arguments</key>
 				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
+					<key>re_pattern</key>
+					<string>href=.*?/AirParrot-(\d+(?:\.\d+)*)\.dmg</string>
+					<key>result_output_var_name</key>
+					<string>version</string>
 					<key>url</key>
-					<string>https://download.airsquirrels.com/AirParrot3/Mac/AirParrot-3.0.0.dmg</string>
+					<string>https://www.airsquirrels.com/airparrot/download</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLTextSearcher</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>url</key>
+					<string>https://download.airsquirrels.com/AirParrot3/Mac/AirParrot-%version%.dmg</string>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
