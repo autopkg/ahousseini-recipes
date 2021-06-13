@@ -33,8 +33,6 @@
 				<dict>
 					<key>filename</key>
 					<string>%NAME%.zip</string>
-					<key>url</key>
-					<string>https://cdn.boinx.com/software/mousepose/Boinx_Mousepose_4.1-10196.app.zip</string>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
