@@ -38,11 +38,11 @@
 					<key>url</key>
 					<string>https://www.archimatetool.com/downloads/archi/</string>
 					<key>filename</key>
-					<string>%NAME%.zip</string>
+					<string>%NAME%.dmg</string>
 					<key>curl_opts</key>
 					<array>
 						<string>--data-binary</string>
-						<string>dl=Archi-Mac-%output_string%.zip</string>
+						<string>dl=Archi-Mac-%output_string%.dmg</string>
 					</array>
 				</dict>
 				<key>Processor</key>
@@ -53,23 +53,21 @@
 				<string>EndOfCheckPhase</string>
 			</dict>
 			<dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
 				<key>Arguments</key>
 				<dict>
-					<key>archive_path</key>
-					<string>%pathname%</string>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>purge_destination</key>
-					<true/>
+					<key>input_path</key>
+					<string>%pathname%/Archi.app</string>
+					<key>requirement</key>
+					<string>identifier "com.archimatetool.editor" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "375WT5T296"</string>
 				</dict>
-				<key>Processor</key>
-				<string>Unarchiver</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
 				<dict>
 					<key>input_plist_path</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/Archi/Archi.app/Contents/Info.plist</string>
+					<string>%pathname%/Archi.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
 					<string>CFBundleShortVersionString</string>
 				</dict>
