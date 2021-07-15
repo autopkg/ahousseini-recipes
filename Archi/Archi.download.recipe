@@ -42,7 +42,7 @@
 					<key>curl_opts</key>
 					<array>
 						<string>--data-binary</string>
-						<string>dl=Archi-Mac-%output_string%.dmg</string>
+						<string>dl=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
 					</array>
 				</dict>
 				<key>Processor</key>
