@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Synology Surveillance Station Client and creates a package.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.pkg.SynologySurveillanceStationClient</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Synology Surveillance Station Client</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>ParentRecipe</key>
+		<string>com.github.ahousseini-recipes.download.SynologySurveillanceStationClient</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Processor</key>
+				<string>PkgCopier</string>
+				<key>Arguments</key>
+				<dict>
+					<key>source_pkg</key>
+					<string>%pathname%/Install Synology Surveillance Station Client.pkg</string>
+					<key>pkg_path</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>path_list</key>
+					<array>
+						<string>%RECIPE_CACHE_DIR%/payload</string>
+						<string>%RECIPE_CACHE_DIR%/unpack</string>
+					</array>
+				</dict>
+				<key>Processor</key>
+				<string>PathDeleter</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
