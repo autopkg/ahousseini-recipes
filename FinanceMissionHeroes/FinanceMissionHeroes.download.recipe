@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
-		<key>Comment</key>
-		<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 		<key>Description</key>
 		<string>Downloads the latest version of FinanceMissionHeroes.</string>
 		<key>Identifier</key>
 		<string>com.github.ahousseini-recipes.download.FinanceMissionHeroes</string>
 		<key>Input</key>
 		<dict>
-			<key>APP_FILENAME</key>
-			<string>FinanceMissionHeroes</string>
 			<key>NAME</key>
 			<string>FinanceMissionHeroes</string>
 		</dict>
@@ -33,6 +29,30 @@
 			<dict>
 				<key>Processor</key>
 				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>archive_path</key>
+					<string>%pathname%</string>
+					<key>destination_path</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>purge_destination</key>
+					<true/>
+				</dict>
+				<key>Processor</key>
+				<string>Unarchiver</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/FinanceMissionHeroes_MacOS.app</string>
+					<key>requirement</key>
+					<string>identifier "unity.FinanceMission.Heroes" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "45XKE95SZ9"</string>
+				</dict>
 			</dict>
 		</array>
 	</dict>
