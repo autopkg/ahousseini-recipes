@@ -1,0 +1,44 @@
+Description: Downloads the latest version of Clin doeil.
+Identifier: com.github.ahousseini-recipes.download.Clindoeil
+MinimumVersion: 1.0.0
+Input:
+  NAME: Clin doeil
+Process:
+  - Processor: URLTextSearcher
+    Arguments:
+      url: https://www.schulverlag.ch/de/produkte/support/meine-lehrmittel/mille-feuilles/offline-version-fuer-desktops
+      re_pattern: '/assets/Support/MF_Cdo_mini-grammaire/Clin-doeil-[0-9\.]*-iOS.zip'
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%.zip'
+      url: 'https://www.schulverlag.ch/%match%'
+  - Processor: EndOfCheckPhase
+  - Processor: Unarchiver
+    Arguments:
+      archive_path: '%pathname%'
+      destination_path: '%RECIPE_CACHE_DIR%/%NAME%'
+      purge_destination: true
+  - Processor: FileFinder
+    Arguments:
+      pattern: '%RECIPE_CACHE_DIR%/%NAME%/Clin doeil-*.pkg'
+  - Processor: CodeSignatureVerifier
+    Arguments:
+      expected_authority_names:
+        - 'Developer ID Installer: Schulverlag plus AG (2BYNKM88BC)'
+        - Developer ID Certification Authority
+        - Apple Root CA
+      input_path: '%found_filename%'
+  - Processor: FlatPkgUnpacker
+    Arguments:
+      destination_path: '%RECIPE_CACHE_DIR%/unpack'
+      flat_pkg_path: '%found_filename%'
+      purge_destination: true
+  - Processor: PkgPayloadUnpacker
+    Arguments:
+      destination_path: '%RECIPE_CACHE_DIR%/payload'
+      pkg_payload_path: '%RECIPE_CACHE_DIR%/unpack/ch.schulverlag.clindoeil.pkg/Payload'
+      purge_destination: true
+  - Processor: Versioner
+    Arguments:
+      input_plist_path: '%RECIPE_CACHE_DIR%/payload/Clin doeil.app/Contents/Info.plist'
+      plist_version_key: CFBundleShortVersionString
