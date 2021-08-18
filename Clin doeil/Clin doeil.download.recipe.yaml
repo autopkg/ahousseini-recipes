@@ -11,7 +11,7 @@ Process:
   - Processor: URLDownloader
     Arguments:
       filename: '%NAME%.zip'
-      url: 'https://www.schulverlag.ch/%match%'
+      url: 'https://www.schulverlag.ch%match%'
   - Processor: EndOfCheckPhase
   - Processor: Unarchiver
     Arguments:
