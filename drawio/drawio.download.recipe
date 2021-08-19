@@ -21,7 +21,7 @@
 					<key>github_repo</key>
 					<string>jgraph/drawio-desktop</string>
 					<key>asset_regex</key>
-					<string>^draw.io.*?dmg$</string>
+					<string>(draw.io-x64-.*?\.dmg)$</string>
 				</dict>
 				<key>Processor</key>
 				<string>GitHubReleasesInfoProvider</string>
