@@ -1,61 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of LyX.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.LyX</string>
+	<key>Input</key>
 	<dict>
-		<key>Comment</key>
-		<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
-		<key>Description</key>
-		<string>Downloads the latest version of LyX.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.LyX</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>LyX</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>cask_name</key>
-					<string>lyx</string>
-				</dict>
-				<key>Processor</key>
-				<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/LyX.app</string>
-					<key>requirement</key>
-					<string>identifier "org.lyx.lyx" and certificate leaf = H"08a2c27dfa7e46463bc0dad278e5797b4aea3556"</string>
-				</dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_plist_path</key>
-					<string>%pathname%/LyX.app/Contents/Info.plist</string>
-					<key>plist_version_key</key>
-					<string>CFBundleShortVersionString</string>
-				</dict>
-				<key>Processor</key>
-				<string>Versioner</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>LyX</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>cask_name</key>
+				<string>lyx</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/LyX.app</string>
+				<key>requirement</key>
+				<string>identifier "org.lyx.lyx" and certificate leaf = H"08a2c27dfa7e46463bc0dad278e5797b4aea3556"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/LyX.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
 </plist>

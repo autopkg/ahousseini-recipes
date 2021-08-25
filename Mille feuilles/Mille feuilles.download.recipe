@@ -1,120 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Mille feuilles.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.Millefeuilles</string>
+	<key>Input</key>
 	<dict>
-		<key>Description</key>
-		<string>Downloads the latest version of Mille feuilles.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.Millefeuilles</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>Mille feuilles</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>re_pattern</key>
-					<string>/assets/Support/MF_Cdo_mini-grammaire/Mille-feuilles-[0-9\.]*-iOS.zip</string>
-					<key>url</key>
-					<string>https://www.schulverlag.ch/de/produkte/support/meine-lehrmittel/mille-feuilles/offline-version-fuer-desktops</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLTextSearcher</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%.zip</string>
-					<key>url</key>
-					<string>https://www.schulverlag.ch%match%</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>archive_path</key>
-					<string>%pathname%</string>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>purge_destination</key>
-					<true/>
-				</dict>
-				<key>Processor</key>
-				<string>Unarchiver</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/Mille feuilles-*.pkg</string>
-				</dict>
-				<key>Processor</key>
-				<string>FileFinder</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>expected_authority_names</key>
-					<array>
-						<string>Developer ID Installer: Schulverlag plus AG (2BYNKM88BC)</string>
-						<string>Developer ID Certification Authority</string>
-						<string>Apple Root CA</string>
-					</array>
-					<key>input_path</key>
-					<string>%found_filename%</string>
-				</dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/unpack</string>
-					<key>flat_pkg_path</key>
-					<string>%found_filename%</string>
-					<key>purge_destination</key>
-					<true/>
-				</dict>
-				<key>Processor</key>
-				<string>FlatPkgUnpacker</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/payload</string>
-					<key>pkg_payload_path</key>
-					<string>%RECIPE_CACHE_DIR%/unpack/ch.schulverlag.millefeuilles.pkg/Payload</string>
-					<key>purge_destination</key>
-					<true/>
-				</dict>
-				<key>Processor</key>
-				<string>PkgPayloadUnpacker</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_plist_path</key>
-					<string>%RECIPE_CACHE_DIR%/payload/Mille feuilles.app/Contents/Info.plist</string>
-					<key>plist_version_key</key>
-					<string>CFBundleShortVersionString</string>
-				</dict>
-				<key>Processor</key>
-				<string>Versioner</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>Mille feuilles</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>/assets/Support/MF_Cdo_mini-grammaire/Mille-feuilles-[0-9\.]*-iOS.zip</string>
+				<key>url</key>
+				<string>https://www.schulverlag.ch/de/produkte/support/meine-lehrmittel/mille-feuilles/offline-version-fuer-desktops</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>https://www.schulverlag.ch%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Mille feuilles-*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Schulverlag plus AG (2BYNKM88BC)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%found_filename%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack</string>
+				<key>flat_pkg_path</key>
+				<string>%found_filename%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack/ch.schulverlag.millefeuilles.pkg/Payload</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload/Mille feuilles.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
 </plist>

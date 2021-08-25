@@ -1,70 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of install4j.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.install4j</string>
+	<key>Input</key>
 	<dict>
-		<key>Comment</key>
-		<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-		<key>Description</key>
-		<string>Downloads the latest version of install4j.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.install4j</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>install4j</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>re_pattern</key>
-					<string>https://download-gcdn.ej-technologies.com/install4j/install4j_macos_[0-9\_]*.dmg</string>
-					<key>result_output_var_name</key>
-					<string>url</string>
-					<key>url</key>
-					<string>https://www.ej-technologies.com/download/install4j/files</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLTextSearcher</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/install4j.app</string>
-					<key>requirement</key>
-					<string>always</string>
-				</dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_plist_path</key>
-					<string>%pathname%/install4j.app/Contents/Info.plist</string>
-					<key>plist_version_key</key>
-					<string>CFBundleShortVersionString</string>
-				</dict>
-				<key>Processor</key>
-				<string>Versioner</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>install4j</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>https://download-gcdn.ej-technologies.com/install4j/install4j_macos_[0-9\_]*.dmg</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://www.ej-technologies.com/download/install4j/files</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/install4j.app</string>
+				<key>requirement</key>
+				<string>always</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/install4j.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
 </plist>

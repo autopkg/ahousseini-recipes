@@ -1,79 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Archi.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.Archi</string>
+	<key>Input</key>
 	<dict>
-		<key>Comment</key>
-		<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-		<key>Description</key>
-		<string>Downloads the latest version of Archi.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.Archi</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>Archi</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Processor</key>
-				<string>ArchiLatestGitHubTagProvider</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>string_to_replace</key>
-					<string>release_</string>
-					<key>input_string</key>
-					<string>%tag%</string>
-				</dict>
-				<key>Processor</key>
-				<string>com.github.grahampugh.recipes.commonprocessors/StringReplacer</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>url</key>
-					<string>https://www.archimatetool.com/downloads/archi/</string>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-					<key>curl_opts</key>
-					<array>
-						<string>--data-binary</string>
-						<string>dl=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
-					</array>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/Archi.app</string>
-					<key>requirement</key>
-					<string>identifier "com.archimatetool.editor" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "375WT5T296"</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_plist_path</key>
-					<string>%pathname%/Archi.app/Contents/Info.plist</string>
-					<key>plist_version_key</key>
-					<string>CFBundleShortVersionString</string>
-				</dict>
-				<key>Processor</key>
-				<string>Versioner</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>Archi</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>ArchiLatestGitHubTagProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_string</key>
+				<string>%tag%</string>
+				<key>string_to_replace</key>
+				<string>release_</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/StringReplacer</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>--data-binary</string>
+					<string>dl=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
+				</array>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://www.archimatetool.com/downloads/archi/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Archi.app</string>
+				<key>requirement</key>
+				<string>identifier "com.archimatetool.editor" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "375WT5T296"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Archi.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
 </plist>

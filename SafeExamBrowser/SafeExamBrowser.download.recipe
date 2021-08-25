@@ -1,55 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of SafeExamBrowser.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.SafeExamBrowser</string>
+	<key>Input</key>
 	<dict>
-		<key>Description</key>
-		<string>Downloads the latest version of SafeExamBrowser.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.SafeExamBrowser</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>Safe Exam Browser</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-					<key>url</key>
-					<string>https://sourceforge.net/projects/seb/files/latest/download</string>
-					<key>curl_opts</key>
-					<array>
-						<string>-L</string>
-					</array>
-					<key>request_headers</key>
-					<dict>
-						<key>user-agent</key>
-						<string>AutoPkg/1.0 (Macintosh; Intel Mac OS X 10.15.7) curl/7.64.1</string>
-					</dict>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/Safe Exam Browser.app</string>
-					<key>requirement</key>
-					<string>anchor apple generic and identifier "org.safeexambrowser.Safe-Exam-Browser" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "6F38DNSC7X")</string>
-				</dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>Safe Exam Browser</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>-L</string>
+				</array>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>AutoPkg/1.0 (Macintosh; Intel Mac OS X 10.15.7) curl/7.64.1</string>
+				</dict>
+				<key>url</key>
+				<string>https://sourceforge.net/projects/seb/files/latest/download</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Safe Exam Browser.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "org.safeexambrowser.Safe-Exam-Browser" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "6F38DNSC7X")</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
 </plist>

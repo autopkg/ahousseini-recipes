@@ -1,70 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Wire.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.Wire</string>
+	<key>Input</key>
 	<dict>
-		<key>Description</key>
-		<string>Downloads the latest version of Wire.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.Wire</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>Wire</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>asset_regex</key>
-					<string>.*\.pkg$</string>
-					<key>github_repo</key>
-					<string>wireapp/wire-desktop</string>
-				</dict>
-				<key>Processor</key>
-				<string>GitHubReleasesInfoProvider</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
-				<key>Arguments</key>
-				<dict>
-					<key>index</key>
-					<integer>1</integer>
-					<key>split_on</key>
-					<string>/</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%-%version%.pkg</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%</string>
-					<key>expected_authority_names</key>
-					<array>
-						<string>3rd Party Mac Developer Installer: Wire Swiss GmbH (EDF3JCE8BC)</string>
-						<string>Apple Worldwide Developer Relations Certification Authority</string>
-						<string>Apple Root CA</string>
-					</array>
-				</dict>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>Wire</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>.*\.pkg$</string>
+				<key>github_repo</key>
+				<string>wireapp/wire-desktop</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>index</key>
+				<integer>1</integer>
+				<key>split_on</key>
+				<string>/</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>3rd Party Mac Developer Installer: Wire Swiss GmbH (EDF3JCE8BC)</string>
+					<string>Apple Worldwide Developer Relations Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
 </plist>

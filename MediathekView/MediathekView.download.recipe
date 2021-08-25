@@ -1,59 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of MediathekView.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.MediathekView</string>
+	<key>Input</key>
 	<dict>
-		<key>Description</key>
-		<string>Downloads the latest version of MediathekView.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.MediathekView</string>
-		<key>Input</key>
-		<dict>
-			<key>DOWNLOAD_URL</key>
-			<string>https://download.mediathekview.de/stabil/MediathekView-latest-mac.dmg</string>
-			<key>NAME</key>
-			<string>MediathekView</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.0.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%-latest-mac.dmg</string>
-					<key>url</key>
-					<string>%DOWNLOAD_URL%</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/%NAME%/MediathekView.app</string>
-					<key>requirement</key>
-					<string>identifier "com.install4j.2884-1958-5872-3865.59" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YSFE2E835K</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>CodeSignatureVerifier</string>
-				<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/%NAME%/MediathekView Shutdown Helper.app</string>
-					<key>requirement</key>
-					<string>anchor apple generic and identifier "org.mediathekview.MediathekView-Shutdown-Helper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YSFE2E835K)</string>
-				</dict>
-			</dict>
-		</array>
+		<key>DOWNLOAD_URL</key>
+		<string>https://download.mediathekview.de/stabil/MediathekView-latest-mac.dmg</string>
+		<key>NAME</key>
+		<string>MediathekView</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-latest-mac.dmg</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%/MediathekView.app</string>
+				<key>requirement</key>
+				<string>identifier "com.install4j.2884-1958-5872-3865.59" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YSFE2E835K</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%/MediathekView Shutdown Helper.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "org.mediathekview.MediathekView-Shutdown-Helper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YSFE2E835K)</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
 </plist>

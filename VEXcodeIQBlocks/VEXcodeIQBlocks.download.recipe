@@ -1,46 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of VEXcode IQ Blocks.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.VEXcodeIQBlocks</string>
+	<key>Input</key>
 	<dict>
-		<key>Comment</key>
-		<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-		<key>Description</key>
-		<string>Downloads the latest version of VEXcode IQ Blocks.</string>
-		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.download.VEXcodeIQBlocks</string>
-		<key>Input</key>
-		<dict>
-			<key>NAME</key>
-			<string>VEXcode IQ Blocks</string>
-		</dict>
-		<key>MinimumVersion</key>
-		<string>1.1.0</string>
-		<key>Process</key>
-		<array>
-			<dict>
-				<key>Processor</key>
-				<string>DeprecationWarning</string>
-				<key>Arguments</key>
-				<dict>
-					<key>warning_message</key>
-					<string>This recipe is no longer supported. Expect it to be removed at a future date.</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>filename</key>
-					<string>%NAME%.dmg</string>
-					<key>url</key>
-					<string>https://link.vex.com/vexcode-iqblocks-mac</string>
-				</dict>
-				<key>Processor</key>
-				<string>URLDownloader</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
-		</array>
+		<key>NAME</key>
+		<string>VEXcode IQ Blocks</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe is no longer supported. Expect it to be removed at a future date.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://link.vex.com/vexcode-iqblocks-mac</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
 </plist>
