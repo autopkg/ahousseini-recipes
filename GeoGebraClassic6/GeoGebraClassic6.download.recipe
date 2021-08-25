@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GeoGebra Classic 6.</string>
 	<key>Identifier</key>
@@ -20,21 +18,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>[0-9\-]*</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://download.geogebra.org/installers/6.0/version.txt</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>https://download.geogebra.org/installers/6.0/GeoGebra-Classic-6-MacOS-Portable-%version%.zip</string>
+				<string>https://download.geogebra.org/package/mac-port</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -55,28 +42,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/GeoGebra Classic 6.app</string>
-				<key>requirement</key>
-				<string>identifier "org.geogebra6.mac" and anchor apple generic and certificate leaf[subject.CN] = "Apple Distribution: Internationales GeoGebra Institut, \"IGI\" (T9W862P4D2)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/GeoGebra Classic 6.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
