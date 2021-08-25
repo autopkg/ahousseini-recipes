@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of mBlock.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.mBlock</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>mblock</string>
 		<key>NAME</key>
 		<string>mBlock</string>
 	</dict>
@@ -23,16 +19,21 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://dl.makeblock.com/mblock5/darwin/V[0-9\.]*.pkg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
+				<string>href=.*?/darwin/V(\d+(?:\.\d+)*)\.pkg</string>
 				<key>url</key>
-				<string>https://www.mblock.cc/download/</string>
+				<string>https://mblock.makeblock.com/en-us/download/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+				<key>url</key>
+				<string>https://dl.makeblock.com/mblock5/darwin/V%match%.pkg</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
