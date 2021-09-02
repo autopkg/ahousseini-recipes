@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of MacmillanEducationTeacher.</string>
+	<key>Identifier</key>
+	<string>com.github.ahousseini-recipes.download.MacmillanEducationTeacher</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>MacmillanEducationTeacher</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>Referer</key>
+					<string>https://myclasses.macmillaneducationeverywhere.com/MEE/TeacherApps</string>
+				</dict>
+				<key>url</key>
+				<string>https://lms-api.macmillan.education/ACEApi/PdfExport/downloadapp?environmentId=Mac&amp;appType=meeTeacherApps</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/MacmillanEducationTeacher.app</string>
+				<key>requirement</key>
+				<string>identifier "com.macmillaneducation.teacher.macx" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = V8U59VE55B</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
