@@ -16,17 +16,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>//dl.silhcdn.com/[a-zA-Z0-9\.]*</string>
-				<key>result_output_var_name</key>
-				<string>url_pattern</string>
-				<key>url</key>
-				<string>https://www.silhouetteamerica.com/software</string>
-			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>SilhouetteStudioURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -34,7 +25,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https:%url_pattern%</string>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
