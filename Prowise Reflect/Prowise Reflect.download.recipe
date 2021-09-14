@@ -18,21 +18,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>https://download.prowise.com/[0-9]*/Prowise_Reflect_v[0-9\.]*Mac.dmg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.prowise.com/en-gb/customer-service-prowise-central/</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://download.prowise.com/132754/Prowise_Reflect_Mac.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
