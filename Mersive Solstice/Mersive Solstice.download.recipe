@@ -18,21 +18,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>https://www.mersive.com/downloads/SolsticeClient-[0-9a-zA-Z\.]*.dmg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.mersive.com/download</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://www.mersive.com/files/41693/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
