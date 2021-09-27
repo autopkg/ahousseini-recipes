@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://cdn.ravensburger.de/db/installer_flat/tiptoi_Manager_Installer.pkg</string>
+				<string>https://cdn.ravensburger.de/db/installer/tiptoi_Manager_Installer.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -33,7 +33,7 @@
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: Ravensburger Digital GmbH (VH92NY4X8Z)</string>
+					<string>Developer ID Installer: Ravensburger Verlag GmbH (83GSP6SSLA)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
