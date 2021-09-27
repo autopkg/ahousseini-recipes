@@ -15,7 +15,7 @@
 # limitations under the License.
 """See docstring for LensVersionProvider class"""
 
-import json
+import yaml
 
 from autopkglib import URLGetter
 
@@ -37,11 +37,11 @@ class LensVersionProvider(URLGetter):
     def main(self):
         """Grab version from appcast"""
 
-        appcast_url = "https://api.k8slens.dev/binaries/latest.json"
+        appcast_url = "https://lens-binaries.s3.amazonaws.com/ide/latest-mac.yml"
 
-        manifest = self.download(appcast_url)
+        appcast = self.download(appcast_url)
 
-        data = json.loads(manifest.decode("utf-8"))
+        data = yaml.load(appcast.decode("utf-8"), Loader=yaml.FullLoader)
         parsed = data["version"]
 
         self.env["version"] = parsed
