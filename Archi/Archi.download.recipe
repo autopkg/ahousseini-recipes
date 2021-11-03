@@ -38,7 +38,7 @@
 				<key>curl_opts</key>
 				<array>
 					<string>--data-binary</string>
-					<string>d1=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
+					<string>dl=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
 				</array>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
