@@ -40,19 +40,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/Burp Suite Community Edition.app</string>
-				<key>requirement</key>
-				<string>always</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Burp Suite Community Edition.app/Contents/Info.plist</string>
+				<string>%pathname%/Burp Suite Community Edition Installer.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
