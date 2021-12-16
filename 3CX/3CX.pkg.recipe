@@ -8,8 +8,6 @@
 	<string>com.github.ahousseini-recipes.pkg.3CX</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.3cx.3CXPhone</string>
 		<key>NAME</key>
 		<string>3CXPhone</string>
 	</dict>
@@ -58,6 +56,20 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>info_path</key>
+				<string>%pkgroot%/Applications/3CXPhone.app/Contents/Info.plist</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_request</key>
 				<dict>
 					<key>chown</key>
@@ -72,7 +84,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>%BUNDLE_ID%</string>
+					<string>com.3cx.3CXPhone</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgdirs</key>
