@@ -18,67 +18,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.pkg</string>
+				<key>re_pattern</key>
+				<string>((https://www.hidrive.strato.com/wget/)([a-zA-Z0-9_.-]*)+).*macOS</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
 				<key>url</key>
-				<string>https://getschoolcraft.com/wp-content/uploads/trial-installer/WorksheetCrafter_Testversion.pkg</string>
+				<string>https://getschoolcraft.com/en/support/download/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack</string>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
-			</dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/version_check</string>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/WorksheetCrafterTrial.pkg/Payload</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/version_check/Applications/WorksheetCrafter_Testversion.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>path_list</key>
-				<array>
-					<string>%RECIPE_CACHE_DIR%/unpack</string>
-					<string>%RECIPE_CACHE_DIR%/version_check</string>
-					<string>%pathname%</string>
-				</array>
-			</dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.pkg</string>
-				<key>url</key>
-				<string>https://develop.getschoolcraft.com/download/%version%/WorksheetCrafter.pkg</string>
+				<string>%NAME%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
