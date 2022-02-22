@@ -1,31 +1,32 @@
 repos:
-- repo: https://github.com/jumanjihouse/pre-commit-hooks
-  rev: 2.1.5
-  hooks:
-  - id: shellcheck
-  - id: shfmt
-    args: [-i 2]
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
-  hooks:
-  - id: check-json
-  - id: check-yaml
-  - id: check-xml
-  - id: pretty-format-json
-    args: [--autofix]
-  - id: check-executables-have-shebangs
-  - id: detect-private-key
-  - id: mixed-line-ending
-  - id: trailing-whitespace
-- repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.11.0
-  hooks:
-  - id: check-autopkg-recipe-list
-  - id: check-autopkg-recipes
-  - id: forbid-autopkg-overrides
-  - id: forbid-autopkg-trust-info
-  - id: check-plists
-- repo: https://github.com/python/black
-  rev: 21.11b1
-  hooks:
-    - id: black
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 2.1.6
+    hooks:
+      - id: shellcheck
+      - id: shfmt
+        args: [-i 2]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-json
+      - id: check-yaml
+      - id: check-xml
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: check-executables-have-shebangs
+      - id: detect-private-key
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: https://github.com/homebysix/pre-commit-macadmin
+    rev: v1.12.1
+    hooks:
+      - id: check-autopkg-recipe-list
+      - id: check-autopkg-recipes
+        args: ["--recipe-prefix=com.github.ahousseini-recipes.", "--strict", "--"]
+      - id: forbid-autopkg-overrides
+      - id: forbid-autopkg-trust-info
+      - id: check-plists
+  - repo: https://github.com/python/black
+    rev: 22.1.0
+    hooks:
+      - id: black
