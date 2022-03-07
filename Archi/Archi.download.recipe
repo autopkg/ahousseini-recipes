@@ -36,7 +36,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>attr.\"name\", \"([a-zA-Z]*)\"</string>
+				<string>attr.\"name\", \"([a-zA-Z_]*)\"</string>
 				<key>result_output_var_name</key>
 				<string>data_binary_random_attribute</string>
 				<key>url</key>
@@ -51,12 +51,12 @@
 				<key>curl_opts</key>
 				<array>
 					<string>--data-binary</string>
-					<string>%data_binary_random_attribute%=%output_string%%2FArchi-Mac-%output_string%.dmg</string>
+					<string>%data_binary_random_attribute%=archi%2F%output_string%%2FArchi-Mac-%output_string%.dmg</string>
 				</array>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://www.archimatetool.com/downloads/archi/</string>
+				<string>https://www.archimatetool.com/downloads/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
