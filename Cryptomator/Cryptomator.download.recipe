@@ -20,19 +20,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>^Cryptomator.*?dmg$</string>
-				<key>github_repo</key>
-				<string>cryptomator/cryptomator</string>
+				<key>re_pattern</key>
+				<string>href=.*?/Cryptomator[._-]v?(\d+(?:\.\d+)+)\.dmg</string>
+				<key>url</key>
+				<string>https://cryptomator.org/downloads/mac/thanks/</string>
 			</dict>
 			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://github.com/cryptomator/cryptomator/releases/download/%match%/Cryptomator-%match%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
