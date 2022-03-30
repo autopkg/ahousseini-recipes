@@ -12,11 +12,20 @@
 		<string>Rhinoceros 7</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.dataJAR-recipes.download.Rhinoceros 7</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The parent recipe has been deprecated</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
