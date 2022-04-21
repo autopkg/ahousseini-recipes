@@ -21,7 +21,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://45rpmsoftware.com/Software/MailRaider/Download/MailRaiderPro.dmg</string>
+				<string>https://45rpmsoftware.com/Software/MailRaider/Download/MailRaiderPro4.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -36,7 +36,7 @@
 				<key>input_path</key>
 				<string>%pathname%/MailRaider Pro.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.45RPMSoftware.MailRaider-Pro-OAS" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "7ATZZYL3EC")</string>
+				<string>anchor apple generic and identifier "com.45RPMSoftware.MailRaiderPro-X-OAS" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "7ATZZYL3EC")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
