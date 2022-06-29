@@ -21,6 +21,19 @@
 	<array>
 		<dict>
 			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>BetterDummy has been discontinued and renamed BetterDisplay
+Details: https://github.com/waydabber/BetterDisplay/discussions/676
+
+We're not going to provide and maintain recipes to cover BetterDisplay.
+				</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>
 	</array>
