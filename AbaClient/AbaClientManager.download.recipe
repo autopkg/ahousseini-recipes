@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://storage.googleapis.com/images.abasky.net/[A-Za-z0-9_-]*/[0-9\.]*/abaclient-[0-9\.]*.dmg</string>
+				<string>/fileadmin/ablage/dokumente/05_abaclient/abaclient-[0-9\.]*.dmg</string>
 				<key>result_output_var_name</key>
-				<string>url</string>
+				<string>filepath</string>
 				<key>url</key>
 				<string>https://downloads.abacus.ch/downloads-page/abaclient/</string>
 			</dict>
@@ -33,6 +33,8 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://downloads.abacus.ch%filepath%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
