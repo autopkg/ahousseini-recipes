@@ -1,12 +1,12 @@
 repos:
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.6
+    rev: 3.0.0
     hooks:
       - id: shellcheck
       - id: shfmt
         args: [-i 2]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.3.0
     hooks:
       - id: check-json
       - id: check-yaml
@@ -18,7 +18,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.12.2
+    rev: v1.12.3
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
@@ -27,6 +27,6 @@ repos:
       - id: forbid-autopkg-trust-info
       - id: check-plists
   - repo: https://github.com/python/black
-    rev: 22.1.0
+    rev: 22.6.0
     hooks:
       - id: black
