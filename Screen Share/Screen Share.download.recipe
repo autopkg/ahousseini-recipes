@@ -19,11 +19,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://share.mypromethean.com/download/mac/Screen_Share_[0-9\.]*_sign.pkg</string>
+				<string>https://share.one.prometheanworld.com/download/mac/Screen_Share_[0-9\.]*_sign.pkg</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>https://share.mypromethean.com/scripts/downloadApp.js</string>
+				<string>https://share.one.prometheanworld.com/scripts/downloadApp.js</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
