@@ -19,11 +19,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>((https://www.hidrive.strato.com/wget/)([a-zA-Z0-9_.-]*)+).*macOS</string>
+				<string>(https:\/\/www\.hidrive\.strato\.com\/wget\/[a-zA-Z0-9_.-]*)"\n.*Mac</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>https://getschoolcraft.com/en/support/download/</string>
+				<string>https://worksheetcrafter.com/downloads/vollversion</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
