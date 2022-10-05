@@ -21,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>/content/dam/newb2b/Support/Software/InstaShare/instashare_mac_v[0-9]*.dmg</string>
+				<string>(https://esupportdownload\.benq\.com/esupport/PUBLIC DISPLAY PRODUCT/Software/InstaShare/InstaShare_for Mac_v\d+(?:\.\d+)+_Mac_\d+\.zip)</string>
 				<key>result_output_var_name</key>
-				<string>url_part</string>
+				<string>download_url</string>
 				<key>url</key>
-				<string>https://www.benq.eu/de-de/business/ifp/instashare/download.html</string>
+				<string>https://www.benq.com/api/esupport-tm/getFiles/en_gb/InstaShare/en_gb,ge_ge,ru_ru,cs_cz,pl_pl,sl_si,sk_sk,fr_fr,it_it,pt_br,es_es,ro_ro,fi_fi,nl_nl,hu_hu,nb_no,da_dk,de_de,sv_se,lt_lt,uk_ua,ru_ru,bg_bg,el_gr</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -33,10 +33,22 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<key>find</key>
+				<string> </string>
+				<key>input_string</key>
+				<string>%download_url%</string>
+				<key>replace</key>
+				<string>%20</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict> <dict>
+			<key>Arguments</key>
+			<dict>
+				<key>prefetch_filename</key>
+				<string>true</string>
 				<key>url</key>
-				<string>https://www.benq.eu%url_part%</string>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -48,8 +60,30 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/InstaShare_for_macOS_*.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_path</key>
-				<string>%pathname%/InstaShare.app</string>
+				<string>%found_filename%/InstaShare.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.eshare.instashow" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = X5WG5Q34LA)</string>
 			</dict>
@@ -60,7 +94,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/InstaShare.app/Contents/Info.plist</string>
+				<string>%found_filename%/InstaShare.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
