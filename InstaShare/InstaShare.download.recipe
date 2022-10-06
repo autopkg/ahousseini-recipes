@@ -42,7 +42,8 @@
 			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict> <dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>prefetch_filename</key>
