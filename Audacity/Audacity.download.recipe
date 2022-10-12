@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Override ARCH with arm64 for the Apple Silicon version.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Audacity.</string>
 	<key>Identifier</key>
@@ -10,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Audacity</string>
+		<key>ARCH</key>
+		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -19,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>.*\.dmg$</string>
+				<string>.*%ARCH%\.dmg$</string>
 				<key>github_repo</key>
 				<string>audacity/audacity</string>
 			</dict>
