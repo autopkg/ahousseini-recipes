@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Override PLATFORM with arm64 for the Apple Silicon version.</string>
+	<string>Override ARCH with arm64 for the Apple Silicon version.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Audacity.</string>
 	<key>Identifier</key>
@@ -12,7 +12,7 @@
 	<dict>
 		<key>NAME</key>
 		<string>Audacity</string>
-		<key>PLATFORM</key>
+		<key>ARCH</key>
 		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>.*%PLATFORM%\.dmg$</string>
+				<string>.*%ARCH%\.dmg$</string>
 				<key>github_repo</key>
 				<string>audacity/audacity</string>
 			</dict>
