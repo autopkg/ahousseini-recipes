@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>apps/ArtSaverApp [0-9\.]* for macOS %MAJOR_VERSION%.zip</string>
+				<string>apps/ArtSaverApp\.app v[0-9\.]* for macOS-%MAJOR_VERSION%\.zip</string>
 				<key>url</key>
 				<string>http://www.cs.uni-bremen.de/~zach/software/ArtSaver/index.html</string>
 			</dict>
