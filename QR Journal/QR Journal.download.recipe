@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-	<key>Description</key>
-	<string>Downloads the latest version of QR Journal.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.QRJournal</string>
 	<key>Input</key>
@@ -20,6 +16,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>--connect-timeout</string>
+					<string>20</string>
+					<string>--max-time</string>
+					<string>120</string>
+					<string>--retry-max-time</string>
+					<string>60</string>
+				</array>
 				<key>re_pattern</key>
 				<string>mac-development/QRJournal[0-9\.]*.dmg</string>
 				<key>result_output_var_name</key>
@@ -33,6 +38,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>--connect-timeout</string>
+					<string>20</string>
+					<string>--max-time</string>
+					<string>120</string>
+					<string>--retry-max-time</string>
+					<string>60</string>
+				</array>
 				<key>url</key>
 				<string>https://www.joshjacob.com/%url_pattern%</string>
 			</dict>
