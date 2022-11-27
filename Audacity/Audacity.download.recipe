@@ -10,10 +10,10 @@
 	<string>com.github.ahousseini-recipes.download.Audacity</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Audacity</string>
 		<key>ARCH</key>
 		<string>x86_64</string>
+		<key>NAME</key>
+		<string>Audacity</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
