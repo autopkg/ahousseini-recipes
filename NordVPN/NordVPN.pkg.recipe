@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of NordVPN and creates a package.</string>
 	<key>Identifier</key>
@@ -25,7 +23,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpack</string>
 				<key>flat_pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/exports/NordVPN_Sideload.pkg</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
@@ -59,6 +57,20 @@
 				<string>%RECIPE_CACHE_DIR%/version_check/NordVPN.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
+					<key>CFBundleName</key>
+					<string>bundlename</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>info_path</key>
+				<string>%RECIPE_CACHE_DIR%/version_check/NordVPN.app/Contents/Info.plist</string>
+				<key>plist_keys</key>
+				<dict>
 					<key>CFBundleIdentifier</key>
 					<string>bundleid</string>
 				</dict>
@@ -72,7 +84,7 @@
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 				<key>source_pkg</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/exports/NordVPN_Sideload.pkg</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
