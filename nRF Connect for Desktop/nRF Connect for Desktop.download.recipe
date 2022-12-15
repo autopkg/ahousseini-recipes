@@ -23,7 +23,7 @@
 				<key>asset_regex</key>
 				<string>.*\.dmg$</string>
 				<key>github_repo</key>
-				<string>NordicSemiconductor/pc-nrfconnect-core</string>
+				<string>NordicSemiconductor/pc-nrfconnect-launcher</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
