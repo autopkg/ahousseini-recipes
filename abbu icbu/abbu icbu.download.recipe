@@ -38,7 +38,7 @@
 				<key>input_path</key>
 				<string>%pathname%/abbu icbu.app</string>
 				<key>requirement</key>
-				<string>identifier "de.sedna.abbuicbuapp" and certificate leaf = H"af12ae547343c5172f534cd4ca1e419aef84caaf"</string>
+				<string>identifier "de.sedna.abbuicbuapp" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: sedna@xsedna.de (N77649279R)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
