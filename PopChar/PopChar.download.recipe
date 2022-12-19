@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of PopChar.</string>
 	<key>Identifier</key>
@@ -20,11 +18,28 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>cask_name</key>
-				<string>popchar</string>
+				<key>re_pattern</key>
+				<string>(https:\\u002F\\u002Fassets\.ergonis\.com\\u002Fblue\\u002FPop_Char_X94_Install_[a-z0-9]+\.dmg)</string>
+				<key>result_output_var_name</key>
+				<string>raw_download_url</string>
+				<key>url</key>
+				<string>https://ergonis.com/popchar/download</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>\u002F</string>
+				<key>input_string</key>
+				<string>%raw_download_url%</string>
+				<key>replace</key>
+				<string>/</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -36,6 +51,8 @@
 					<key>user-agent</key>
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15</string>
 				</dict>
+				<key>url</key>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
