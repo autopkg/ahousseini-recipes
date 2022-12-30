@@ -19,9 +19,31 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https:\\u002F\\u002Fassets\.ergonis\.com\\u002Fblue\\u002FPop_Char_X94_Install_[a-z0-9]+\.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>raw_download_url</string>
+				<string>&lt;Program_Version&gt;(\d+(?:\.\d+)+)&lt;</string>
+				<key>url</key>
+				<string>https://update.ergonis.com/vck/popcharx.xml</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>.</string>
+				<key>input_string</key>
+				<string>%match%</string>
+				<key>replace</key>
+				<string></string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>Pop_Char_X94_Install_[A-Za-z0-9]+\.dmg</string>
 				<key>url</key>
 				<string>https://ergonis.com/popchar/download</string>
 			</dict>
@@ -31,28 +53,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>find</key>
-				<string>\u002F</string>
-				<key>input_string</key>
-				<string>%raw_download_url%</string>
-				<key>replace</key>
-				<string>/</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15</string>
-				</dict>
 				<key>url</key>
-				<string>%output_string%</string>
+				<string>https://assets.ergonis.com/green/%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
