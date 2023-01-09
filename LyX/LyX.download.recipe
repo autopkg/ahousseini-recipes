@@ -27,8 +27,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
 				<key>url</key>
 				<string>%match%</string>
 			</dict>
