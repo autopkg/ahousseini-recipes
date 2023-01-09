@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
-	<key>Description</key>
-	<string>Downloads the latest version of LyX.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.LyX</string>
 	<key>Input</key>
@@ -20,13 +16,22 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>cask_name</key>
-				<string>lyx</string>
+				<key>re_pattern</key>
+				<string>href=\'(https://ftp\.lip6\.fr/pub/lyx/bin/\d+(?:\.\d+)+/LyX-\d+(?:\.\d+)+\+qt5-x86_64-arm64-cocoa\.dmg)</string>
+				<key>url</key>
+				<string>https://www.lyx.org/Download</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
@@ -40,7 +45,7 @@
 				<key>input_path</key>
 				<string>%pathname%/LyX.app</string>
 				<key>requirement</key>
-				<string>identifier "org.lyx.lyx" and certificate leaf = H"08a2c27dfa7e46463bc0dad278e5797b4aea3556"</string>
+				<string>identifier "org.lyx.lyx" and certificate root = H"bc48ff7941c33f70838298a129f92745a39e654b"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
