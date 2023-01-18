@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-	<key>Description</key>
-	<string>Downloads the latest version of Linphone.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.Linphone</string>
 	<key>Input</key>
@@ -20,8 +16,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>href=\"(https://www\.linphone\.org/releases/macosx/app/Linphone-\d+(?:\.\d+)+-mac\.dmg)</string>
 				<key>url</key>
-				<string>https://download.linphone.org/releases/macosx/Linphone-latest-mac.dmg</string>
+				<string>https://www.linphone.org</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
