@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>ARCH can be set to x86_64 or aarch64</string>
 	<key>Description</key>
 	<string>Downloads the latest version of KNIME.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.KNIME</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>NAME</key>
 		<string>KNIME</string>
 	</dict>
@@ -21,7 +25,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://download.knime.org/analytics-platform/macosx/knime-latest-app.macosx.cocoa.x86_64.dmg</string>
+				<string>https://download.knime.org/analytics-platform/macosx/knime-latest-app.macosx.cocoa.%ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
