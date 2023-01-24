@@ -16,19 +16,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>href=\"(https://www\.linphone\.org/releases/macosx/app/Linphone-\d+(?:\.\d+)+-mac\.dmg)</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://www.linphone.org</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>%match%</string>
+				<string>https://linphone.org/releases/macosx/latest_app</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
