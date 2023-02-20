@@ -22,6 +22,11 @@
 				<string>(https://www\.starface-cdn\.de/starface/clients/mac/STARFACE-\d+(?:.\d+)+.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>download_url</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.39 (KHTML, like Gecko) Version/9.0 Safari/601.1.39</string>
+				</dict>
 				<key>url</key>
 				<string>https://knowledge.starface.de/pages/viewpage.action?pageId=46564694</string>
 			</dict>
