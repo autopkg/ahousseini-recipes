@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Stellarium.</string>
 	<key>Identifier</key>
@@ -21,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>^Stellarium.*?zip$</string>
+				<string>^Stellarium.*?-macOS\.zip$</string>
 				<key>github_repo</key>
 				<string>Stellarium/stellarium</string>
 			</dict>
