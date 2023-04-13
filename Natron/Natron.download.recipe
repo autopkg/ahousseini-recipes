@@ -2,12 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Valid values for BUILD_TARGET are:
+           - macOS12-x86_64
+           - macOS1015-x86_64
+           - MacOSX106-Universal-i386-x86_64
+           - OSX109-x86_64</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Natron.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.Natron</string>
 	<key>Input</key>
 	<dict>
+		<key>BUILD_TARGET</key>
+		<string>macOS12-x86_64</string>
 		<key>NAME</key>
 		<string>Natron</string>
 	</dict>
@@ -19,7 +27,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>(Natron.*?\.dmg)$</string>
+				<string>(Natron-\d+(?:.\d+)*-%BUILD_TARGET%\.dmg)$</string>
 				<key>github_repo</key>
 				<string>NatronGitHub/Natron</string>
 			</dict>
