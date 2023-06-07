@@ -1,3 +1,4 @@
+---
 repos:
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
@@ -18,7 +19,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.12.3
+    rev: v1.12.4
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
@@ -27,6 +28,10 @@ repos:
       - id: forbid-autopkg-trust-info
       - id: check-plists
   - repo: https://github.com/python/black
-    rev: 22.10.0
+    rev: 23.3.0
     hooks:
       - id: black
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.32.0
+    hooks:
+      - id: yamllint

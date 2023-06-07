@@ -1,6 +1,6 @@
 #!/usr/local/autopkg/python
 #
-# Copyright 2020 Anver Housseini
+# Copyright 2023 Anver Housseini
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ class HomebrewCaskURL(URLGetter):
         parsed = data["url"]
 
         self.env["url"] = parsed
-        self.output(f"Got URL {self.env['url']} for cask '{self.env['cask_name']}':")
+        self.output(f"Got URL for cask '{self.env['cask_name']}': {self.env['url']}")
 
 
 if __name__ == "__main__":
