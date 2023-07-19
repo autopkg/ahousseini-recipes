@@ -18,17 +18,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>https://download.migrosbank.ch/mid/MigrosBank-EBanking-Mac-[0-9\.]*.pkg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
+				<key>prefetch_filename</key>
+				<string>true</string>
 				<key>url</key>
-				<string>https://www.migrosbank.ch/privatpersonen/e-banking/zugriff.html</string>
+				<string>https://www.migrosbank.ch/appmac</string>
 			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
