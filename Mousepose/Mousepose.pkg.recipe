@@ -7,18 +7,16 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Mouseposé and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.pkg.Mouseposé</string>
+	<string>com.github.ahousseini-recipes.pkg.Mousepose</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Mousepose</string>
 		<key>NAME</key>
-		<string>Mouseposé</string>
+		<string>Mousepose</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.ahousseini-recipes.download.Mouseposé</string>
+	<string>com.github.ahousseini-recipes.download.Mousepose</string>
 	<key>Process</key>
 	<array>
 		<dict>
