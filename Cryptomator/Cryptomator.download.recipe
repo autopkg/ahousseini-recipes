@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Set ARCH to x64 for Intel or to arm64 for Apple Silicon.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Cryptomator.</string>
 	<key>Identifier</key>
@@ -22,19 +22,32 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>.*%ARCH%.*\.dmg$</string>
-				<key>github_repo</key>
-				<string>cryptomator/cryptomator</string>
+				<key>cask_name</key>
+				<string>cryptomator</string>
 			</dict>
 			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>x64</string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string>%ARCH%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
