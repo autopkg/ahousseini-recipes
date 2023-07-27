@@ -47,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/scratch-link-*.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Scratch Link-*.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileFinder</string>
