@@ -34,7 +34,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/version_check</string>
 				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/ScratchLink.pkg/Payload</string>
+				<string>%RECIPE_CACHE_DIR%/unpack/edu.mit.scratch.scratch-link.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
