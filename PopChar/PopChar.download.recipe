@@ -18,45 +18,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>&lt;Program_Version&gt;(\d+(?:\.\d+)+)&lt;</string>
-				<key>url</key>
-				<string>https://update.ergonis.com/vck/popcharx.xml</string>
+				<key>cask_name</key>
+				<string>popchar</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>find</key>
-				<string>.</string>
-				<key>input_string</key>
-				<string>%match%</string>
-				<key>replace</key>
-				<string></string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>Pop_Char_X94_Install_[A-Za-z0-9]+\.dmg</string>
-				<key>url</key>
-				<string>https://ergonis.com/popchar/download</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://assets.ergonis.com/green/%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
