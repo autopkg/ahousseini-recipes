@@ -34,7 +34,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/version_check</string>
 				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/Screen_Share.pkg/Payload</string>
+				<string>%RECIPE_CACHE_DIR%/unpack/ScreenShare.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
