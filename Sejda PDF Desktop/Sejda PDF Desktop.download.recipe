@@ -18,22 +18,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>mac\s*:\s*["']sejda[._-]desktop[._-]v?(\d+(?:\.\d+)+)\.dmg</string>
-				<key>url</key>
-				<string>https://www.sejda.com/desktop</string>
+				<key>cask_name</key>
+				<string>sejda-pdf</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://sejda-cdn.com/downloads/sejda-desktop_%match%.dmg</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
