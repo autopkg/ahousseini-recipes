@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.pkg</string>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
 				<string>https://s.mblock.cc/download/pc-mac</string>
 			</dict>
@@ -33,14 +33,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Installer: Makeblock Co., Ltd. (XWN8AWFG9J)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
 				<key>input_path</key>
-				<string>%pathname%</string>
+				<string>%pathname%/mBlock.app</string>
+				<key>requirement</key>
+				<string>identifier "cc.mblock" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = XWN8AWFG9J</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
