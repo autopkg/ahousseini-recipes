@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>ARCH can be set to x86_64 or arm64; set ARCH_URL in download accordingly.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.pkg.mBlock</string>
+	<string>com.github.ahousseini-recipes.pkg.mBlock-intel</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.ahousseini-recipes.download.mBlock</string>
+	<string>com.github.ahousseini-recipes.download.mBlock-intel</string>
 	<key>Process</key>
 	<array>
 		<dict>
