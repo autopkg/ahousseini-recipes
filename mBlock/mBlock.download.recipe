@@ -3,23 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>ARCH can be set to x86_64 or arm64; ARCH_URL to "" or "-arm".
-			Download assets vary between architectures.</string>
+	<string>Set ARCH to "" for x86_64 and "-arm" for arm64.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of mBlock.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.download.mBlock-arm</string>
+	<string>com.github.ahousseini-recipes.download.mBlock</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>arm64</string>
-		<key>ARCH_URL</key>
 		<string>-arm</string>
 		<key>NAME</key>
 		<string>mBlock</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -28,7 +25,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://s.mblock.cc/download/pc-mac%ARCH_URL%</string>
+				<string>https://s.mblock.cc/download/pc-mac%ARCH%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -47,6 +44,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/mBlock.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
