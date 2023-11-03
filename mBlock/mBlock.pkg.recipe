@@ -3,20 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>ARCH can be set to x86_64 or arm64; set ARCH_URL in download accordingly.</string>
+	<string>Set ARCH to "" for x86_64 and "-arm" for arm64.</string>
+	<key>Description</key>
+	<string>Downloads the latest version of mBlock and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.pkg.mBlock-arm</string>
+	<string>com.github.ahousseini-recipes.pkg.mBlock</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>arm64</string>
+		<string>-arm</string>
 		<key>NAME</key>
 		<string>mBlock</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.ahousseini-recipes.download.mBlock-arm</string>
+	<string>com.github.ahousseini-recipes.download.mBlock</string>
 	<key>Process</key>
 	<array>
 		<dict>
