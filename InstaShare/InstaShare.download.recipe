@@ -18,17 +18,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>(https://esupportdownload\.benq\.com/esupport/PUBLIC DISPLAY PRODUCT/Software/InstaShare/InstaShare_for Mac_v\d+(?:\.\d+)+_Mac_\d+\.zip)</string>
-				<key>result_output_var_name</key>
-				<string>download_url</string>
-				<key>url</key>
-				<string>https://www.benq.com/api/esupport-tm/getFiles/en_gb/InstaShare/en_gb,ge_ge,ru_ru,cs_cz,pl_pl,sl_si,sk_sk,fr_fr,it_it,pt_br,es_es,ro_ro,fi_fi,nl_nl,hu_hu,nb_no,da_dk,de_de,sv_se,lt_lt,uk_ua,ru_ru,bg_bg,el_gr</string>
-			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>InstaShareURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -36,7 +27,7 @@
 				<key>find</key>
 				<string> </string>
 				<key>input_string</key>
-				<string>%download_url%</string>
+				<string>%url%</string>
 				<key>replace</key>
 				<string>%20</string>
 			</dict>
