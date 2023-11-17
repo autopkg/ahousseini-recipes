@@ -20,13 +20,13 @@
 			<dict>
 				<key>re_pattern</key>
 				<string>(https://www\.starface-cdn\.de/starface/clients/mac/STARFACE-\d+(?:.\d+)+.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>download_url</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15</string>
 				</dict>
+				<key>result_output_var_name</key>
+				<string>download_url</string>
 				<key>url</key>
 				<string>https://knowledge.starface.de/pages/viewpage.action?pageId=46564694</string>
 			</dict>
