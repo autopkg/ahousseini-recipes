@@ -16,21 +16,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>Linphone[._-]v?(\d+(?:\.\d+)+)[._-]mac\.dmg</string>
-				<key>url</key>
-				<string>https://download.linphone.org/releases/macosx/app/</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://download.linphone.org/releases/macosx/app/Linphone-%match%-mac.dmg</string>
+				<string>https://linphone.org/releases/macosx/latest_app</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -45,7 +34,7 @@
 				<key>input_path</key>
 				<string>%pathname%/Linphone.app</string>
 				<key>requirement</key>
-				<string>identifier "org.linphone.linphone" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Z2V957B3D6</string>
+				<string>identifier "com.belledonnecommunications.linphone" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Z2V957B3D6</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
