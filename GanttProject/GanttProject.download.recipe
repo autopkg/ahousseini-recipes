@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Valid values for ARCH are 'intel' and 'silicon'.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GanttProject.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.GanttProject</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>intel</string>
 		<key>NAME</key>
 		<string>GanttProject</string>
 	</dict>
@@ -21,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>^ganttproject.*?dmg$</string>
+				<string>^ganttproject-\d+(?:\.\d+)*-%ARCH%\.dmg$</string>
 				<key>github_repo</key>
 				<string>bardsoftware/ganttproject</string>
 			</dict>
