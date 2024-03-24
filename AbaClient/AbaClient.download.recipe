@@ -23,7 +23,7 @@
 				<key>result_output_var_name</key>
 				<string>filepath</string>
 				<key>url</key>
-				<string>https://downloads.abacus.ch/downloads-page/abaclient/</string>
+				<string>https://downloads.abacus.ch/downloads/abaclient</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
