@@ -18,30 +18,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>.*\.pkg$</string>
-				<key>github_repo</key>
-				<string>wireapp/wire-desktop</string>
+				<key>cask_name</key>
+				<string>wire</string>
 			</dict>
 			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>index</key>
-				<integer>1</integer>
-				<key>split_on</key>
-				<string>/</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.pkg</string>
+				<string>%NAME%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
