@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>intel</string>
+		<string>Intel</string>
 		<key>NAME</key>
 		<string>OBS</string>
 	</dict>
@@ -30,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>find</key>
-				<string>intel</string>
+				<string>Intel</string>
 				<key>input_string</key>
 				<string>%url%</string>
 				<key>replace</key>
