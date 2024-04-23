@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>find</key>
-				<string>x64</string>
+				<string>arm64</string>
 				<key>input_string</key>
 				<string>%url%</string>
 				<key>replace</key>
