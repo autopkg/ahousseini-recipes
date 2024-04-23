@@ -24,6 +24,11 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>referer</key>
+					<string>https://www.mblock.cc/</string>
+				</dict>
 				<key>url</key>
 				<string>https://s.mblock.cc/download/pc-mac%ARCH%</string>
 			</dict>
