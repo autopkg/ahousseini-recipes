@@ -36,7 +36,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/mBlock.app</string>
+				<string>%pkgroot%/Applications/Makeblock/mBlock.app</string>
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
