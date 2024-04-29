@@ -34,7 +34,7 @@ repos:
       - id: forbid-autopkg-trust-info
       - id: check-plists
   - repo: https://github.com/python/black
-    rev: 24.4.0
+    rev: 24.4.2
     hooks:
       - id: black
   - repo: https://github.com/adrienverge/yamllint
