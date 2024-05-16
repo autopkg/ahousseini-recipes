@@ -18,8 +18,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>request_headers</key>
+				<dict>
+					<key>referer</key>
+					<string>https://tiptoi.de/</string>
+				</dict>
 				<key>url</key>
-				<string>https://cdn.ravensburger.de/db/installer/tiptoi_Manager_Installer.pkg</string>
+				<string>https://cdn.ravensburger.de/db/Installer/tiptoi_Manager_Installer.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
