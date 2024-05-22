@@ -19,14 +19,14 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https://www\.starface-cdn\.de/starface/clients/mac/STARFACE-\d+(?:.\d+)+.dmg)</string>
+				<string>(https://www\.starface-cdn\.de/starface/clients/mac/STARFACE_\d+(?:\.\d+)+_\d+_[0-9a-z]+\.dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15</string>
 				</dict>
 				<key>result_output_var_name</key>
-				<string>download_url</string>
+				<string>url</string>
 				<key>url</key>
 				<string>https://knowledge.starface.de/pages/viewpage.action?pageId=46564694</string>
 			</dict>
@@ -38,8 +38,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -51,21 +49,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/STARFACE.app</string>
-				<key>overwrite</key>
-				<true/>
-				<key>source_path</key>
-				<string>%pathname%/STARFACE.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/STARFACE.app</string>
+				<string>%pathname%/STARFACE.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "de.starface.STARFACE-Client" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Q965D3UXEW)</string>
 			</dict>
