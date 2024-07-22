@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>http://xsedna.de/Sedna/abbu-icbu_files/abbuicbu.dmg</string>
+				<string>https://xsedna.de/Sedna/abbu-icbu_files/abbuicbu.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
