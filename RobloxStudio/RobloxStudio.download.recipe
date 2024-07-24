@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Leave ARCH_URL empty for Intel, set to '/arm64' for Apple Silicon.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of RobloxStudio.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.RobloxStudio</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH_URL</key>
+		<string></string>
 		<key>NAME</key>
 		<string>RobloxStudio</string>
 	</dict>
@@ -32,7 +36,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://setup.rbxcdn.com/mac/%match%-RobloxStudioApp.zip</string>
+				<string>https://setup.rbxcdn.com/mac%ARCH_URL%/%match%-RobloxStudioApp.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

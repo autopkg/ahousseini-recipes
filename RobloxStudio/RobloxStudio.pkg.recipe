@@ -2,12 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Leave ARCH_URL empty for Intel, set to '/arm64' for Apple Silicon. ARCH can be an arbitrary string.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of RobloxStudio and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.pkg.RobloxStudio</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x64</string>
+		<key>ARCH_URL</key>
+		<string></string>
 		<key>NAME</key>
 		<string>RobloxStudio</string>
 	</dict>
@@ -20,8 +26,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/RobloxStudio.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>app_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/RobloxStudio.app</string>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%-%ARCH%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
