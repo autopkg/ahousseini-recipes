@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>^[a-zA-Z0-9_.-]*$</string>
+				<string>clientVersionUpload\":\"(version-[a-z0-9]*)\",</string>
 				<key>url</key>
-				<string>http://setup.roblox.com/mac/versionStudio</string>
+				<string>https://clientsettingscdn.roblox.com/v2/client-version/MacStudio</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -40,6 +40,30 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/RobloxStudio.app</string>
+				<key>requirement</key>
+				<string>identifier "com.Roblox.RobloxStudio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2CFABCH843"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>

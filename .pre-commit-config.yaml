@@ -25,7 +25,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.15.0
+    rev: v1.16.2
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
