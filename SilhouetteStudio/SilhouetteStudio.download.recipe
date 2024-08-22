@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href=\"(https://www\.silhouetteamerica\.com/software/file/index/id/[0-9a-z]+/)\" class=\"secondary-btn mac</string>
+				<string>href=\"(https://d62nvtdcnsm38\.cloudfront\.net/files/softwares/ss/SS_V\d+(?:\.\d+)+_M6R[_0-9]*\.dmg)\" class=\"secondary-btn mac</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
