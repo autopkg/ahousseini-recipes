@@ -25,6 +25,11 @@
 			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
