@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of LogiTune.</string>
+	<string>Downloads the latest version of Logi Tune.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.LogiTune</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>LogiTune</string>
+		<string>Logi Tune</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
