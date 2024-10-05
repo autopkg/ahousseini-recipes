@@ -16,19 +16,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>LyX[._-]v?(\d+(?:\.\d+)+)\+qt5</string>
-				<key>url</key>
-				<string>https://www.lyx.org/Download</string>
+				<key>cask_name</key>
+				<string>lyx</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://ftp.lip6.fr/pub/lyx/bin/%match%/LyX-%match%+qt5-x86_64-arm64-cocoa.dmg</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -47,17 +45,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/LyX.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
