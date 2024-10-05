@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
-	<key>Description</key>
-	<string>Downloads the latest version of PrusaSlicer.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.PrusaSlicer</string>
 	<key>Input</key>
@@ -20,13 +16,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>^.*.dmg$</string>
-				<key>github_repo</key>
-				<string>prusa3d/PrusaSlicer</string>
+				<key>cask_name</key>
+				<string>prusaslicer</string>
 			</dict>
 			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
