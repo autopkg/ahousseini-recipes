@@ -20,10 +20,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<key>re_pattern</key>
+				<string>href="magic-number-machine\.([\d\.]+)\.zip"</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
 				<key>url</key>
-				<string>http://projectswithlove.com/magicnumbermachine/magic-number-machine.1.0.32.zip</string>
+				<string>https://projectswithlove.com/magicnumbermachine/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>https://projectswithlove.com/magicnumbermachine/magic-number-machine.%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
