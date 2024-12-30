@@ -14,7 +14,7 @@
 		<string>BookWidgets</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.ahousseini-recipes.download.BookWidgets</string>
 	<key>Process</key>
