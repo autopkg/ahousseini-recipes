@@ -1,5 +1,3 @@
-#!/usr/local/autopkg/python
-#
 # Copyright 2020 Anver Housseini
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
