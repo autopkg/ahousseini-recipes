@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https:\/\/www\.hidrive\.strato\.com\/wget\/[a-zA-Z0-9_.-]*)"\n.*Mac</string>
+				<string>href=\"(https://www\.hidrive\.strato\.com/wget/[a-zA-Z0-9_.-]{8})\" aria-label=\"Download f.r macOS\"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
