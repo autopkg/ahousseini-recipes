@@ -1,16 +1,14 @@
 ---
 repos:
-  - repo: https://github.com/cisagov/pre-commit-shfmt
-    rev: v0.0.2
-    hooks:
-      - id: shfmt
-        args:
-          - -i
-          - '2'
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 3.0.0
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
     hooks:
       - id: shellcheck
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.10.0-2
+    hooks:
+      - id: shfmt
+        args: [-i, "2", -w]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
@@ -19,13 +17,12 @@ repos:
       - id: check-xml
       - id: pretty-format-json
         args: [--autofix]
-      - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
       - id: detect-private-key
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.18.0
+    rev: v1.19.0
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
@@ -34,10 +31,14 @@ repos:
       - id: forbid-autopkg-trust-info
       - id: check-plists
   - repo: https://github.com/python/black
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.35.1
     hooks:
       - id: yamllint
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.17.2
+    hooks:
+      - id: markdownlint-cli2
