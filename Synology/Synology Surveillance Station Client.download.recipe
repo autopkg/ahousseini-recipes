@@ -19,11 +19,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&gt;\s*Version:\s*(\d+(?:\.\d+)*-\d+)\s*&lt;</string>
+				<string>&gt;(\d+(?:\.\d+)*-\d+)\s*&lt;</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://www.synology.com/en-us/releaseNote/SurveillanceStationClient</string>
+				<string>https://archive.synology.com/download/Utility/SurveillanceStationClient</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
