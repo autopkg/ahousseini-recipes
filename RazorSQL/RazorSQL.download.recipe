@@ -5,11 +5,16 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of RazorSQL.</string>
+	<string>Downloads the latest version of RazorSQL.
+
+To download Apple Silicon use: "_aarch64" in the DOWNLOAD_ARCH variable
+To download Intel leave the DOWNLOAD_ARCH variable empty</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.RazorSQL</string>
 	<key>Input</key>
 	<dict>
+		<key>DOWNLOAD_ARCH</key>
+		<string></string>
 		<key>NAME</key>
 		<string>RazorSQL</string>
 	</dict>
@@ -21,7 +26,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://s3.dualstack.us-east-1.amazonaws.com/downloads.razorsql.com/downloads/[0-9\_]*/razorsql[0-9\_]*.dmg</string>
+				<string>(https://s3.dualstack.us-east-1.amazonaws.com/downloads.razorsql.com/downloads/([0-9]+(_[0-9]+)+)/razorsql([0-9]+(_[0-9]+)+)%DOWNLOAD_ARCH%.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
