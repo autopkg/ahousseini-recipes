@@ -18,11 +18,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://api.devontechnologies.com/1/apps/sparkle/sparkle.php?id=300900000</string>
+				<key>cask_name</key>
+				<string>devonthink</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
