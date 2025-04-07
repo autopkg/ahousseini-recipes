@@ -19,11 +19,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>Version:\s*(\d+(?:\.\d+)*)</string>
+				<string>&gt;(\d+(?:\.\d+)*)-</string>
 				<key>result_output_var_name</key>
 				<string>url_version_part_1</string>
 				<key>url</key>
-				<string>https://www.synology.com/en-us/releaseNote/SynologyDriveClient</string>
+				<string>https://archive.synology.com/download/Utility/SynologyDriveClient</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -32,11 +32,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>Version:\s*(\d+(?:\.\d+)*)-(\d+)</string>
+				<string>&gt;(\d+(?:\.\d+)*)-(\d+)&lt;</string>
 				<key>result_output_var_name</key>
 				<string>url_version_part_2</string>
 				<key>url</key>
-				<string>https://www.synology.com/en-us/releaseNote/SynologyDriveClient</string>
+				<string>https://archive.synology.com/download/Utility/SynologyDriveClient</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
