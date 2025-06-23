@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Funter 6</string>
+		<string>Funter 7</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%pathname%/Funter 6.app</string>
+				<string>%pathname%/Funter 7.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
