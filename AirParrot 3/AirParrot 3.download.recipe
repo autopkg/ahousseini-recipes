@@ -18,10 +18,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>cask_name</key>
+				<string>airparrot</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://www.airsquirrels.com/airparrot/download/app/macos?hsLang=en</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
