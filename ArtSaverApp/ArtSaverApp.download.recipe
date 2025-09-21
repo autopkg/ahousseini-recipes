@@ -23,7 +23,7 @@
 				<key>re_pattern</key>
 				<string>apps/ArtSaverApp\.app v[0-9\.]* for macOS-%MAJOR_VERSION%\.zip</string>
 				<key>url</key>
-				<string>http://www.cs.uni-bremen.de/~zach/software/ArtSaver/index.html</string>
+				<string>https://www.cs.uni-bremen.de/~zach/software/ArtSaver/index.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -47,7 +47,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>http://www.cs.uni-bremen.de/~zach/software/ArtSaver/%output_string%</string>
+				<string>https://www.cs.uni-bremen.de/~zach/software/ArtSaver/%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
