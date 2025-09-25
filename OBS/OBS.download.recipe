@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>For Apple Silicon, override ARCH with "Apple"</string>
+	<string>For Apple Silicon, override ARCH with "apple"</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.OBS</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>Intel</string>
+		<string>intel</string>
 		<key>NAME</key>
 		<string>OBS</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.7.6</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -30,22 +30,22 @@
 			<key>Arguments</key>
 			<dict>
 				<key>find</key>
-				<string>Apple</string>
+				<string>apple</string>
 				<key>input_string</key>
 				<string>%url%</string>
 				<key>replace</key>
 				<string>%ARCH%</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+			<string>FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

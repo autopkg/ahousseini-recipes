@@ -9,12 +9,12 @@
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>Intel</string>
+		<string>intel</string>
 		<key>NAME</key>
 		<string>OBS</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.7.6</string>
 	<key>ParentRecipe</key>
 	<string>com.github.ahousseini-recipes.download.OBS</string>
 	<key>Process</key>
