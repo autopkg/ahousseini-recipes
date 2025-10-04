@@ -85,8 +85,6 @@
 					</array>
 					<key>id</key>
 					<string>com.3cx.3CXPhone</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgdirs</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot/Applications/</string>
 					<key>pkgname</key>
