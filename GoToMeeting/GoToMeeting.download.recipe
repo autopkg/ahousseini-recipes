@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GoToMeeting.</string>
 	<key>Identifier</key>
@@ -20,10 +18,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>cask_name</key>
+				<string>gotomeeting</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://link.gotomeeting.com/latest-dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
