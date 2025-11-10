@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.ahousseini-recipes.download.ScriptDebugger</string>
+	<string>com.github.foigus.download.ScriptDebugger8</string>
 	<key>Process</key>
 	<array>
 		<dict>
