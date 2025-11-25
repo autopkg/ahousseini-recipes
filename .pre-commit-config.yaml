@@ -22,7 +22,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.21.0
+    rev: v1.21.1
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
@@ -30,8 +30,8 @@ repos:
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
       - id: check-plists
-  - repo: https://github.com/python/black
-    rev: 25.9.0
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 25.11.0
     hooks:
       - id: black
   - repo: https://github.com/adrienverge/yamllint
@@ -39,6 +39,6 @@ repos:
     hooks:
       - id: yamllint
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.18.1
+    rev: v0.19.1
     hooks:
       - id: markdownlint-cli2
