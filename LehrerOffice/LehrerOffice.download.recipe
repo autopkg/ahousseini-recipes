@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of LehrerOffice.</string>
 	<key>Identifier</key>
@@ -22,6 +20,11 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>User-Agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</string>
+				</dict>
 				<key>url</key>
 				<string>https://cmi-bildung.ch/lo/dateien/easy/lo_desktop_macos_universal.dmg</string>
 			</dict>
