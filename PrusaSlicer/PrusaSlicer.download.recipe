@@ -30,6 +30,19 @@
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+		</dict>	
+		<dict>
+			<key>Arguments</key>
+			<dict>
+			  <key>url</key>
+			  <string>%asset_url%</string>
+				<key>re_pattern</key>
+				<string><![CDATA[(?<=\/PrusaSlicer-)[\d\.]+]]></string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
