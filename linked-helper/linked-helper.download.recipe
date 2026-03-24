@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Override ARCH with "arm64" for Apple Silicon.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of linked-helper.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.linked-helper</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x64</string>
 		<key>NAME</key>
 		<string>linked-helper</string>
 	</dict>
@@ -23,7 +25,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://autoupdate.linkedhelper.com/linked-helper/444657160c922f6b8048468fef840020/latest/darwin/x64/linked-helper.dmg</string>
+				<string>https://autoupdate.linkedhelper.com/linked-helper/444657160c922f6b8048468fef840020/latest/darwin/%ARCH%/linked-helper.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -42,17 +44,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/linked-helper.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
