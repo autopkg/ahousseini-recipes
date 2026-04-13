@@ -5,7 +5,7 @@ repos:
     hooks:
       - id: shellcheck
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.13.0-1
+    rev: v3.13.1-1
     hooks:
       - id: shfmt
         args: [-i, "2", -w]
@@ -22,7 +22,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.23.0
+    rev: v1.24.1
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
