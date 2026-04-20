@@ -26,7 +26,7 @@
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</string>
 				</dict>
 				<key>url</key>
-				<string>https://cmi-bildung.ch/lo/dateien/db/lo_dbadmin_macos.dmg</string>
+				<string>https://cmi.ch/lo/dateien/db/lo_dbadmin_macos_universal.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
