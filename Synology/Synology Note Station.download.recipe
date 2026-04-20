@@ -21,9 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&gt;(\d+(?:\.\d+)*-\d+)\s*&lt;</string>
+				<string>download/Utility/NoteStationClient/\d+(?:\.\d+)+-\d+</string>
 				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>download_page_part</string>
 				<key>url</key>
 				<string>https://archive.synology.com/download/Utility/NoteStationClient</string>
 			</dict>
@@ -33,10 +33,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>https://global\.synologydownload\.com/download/Utility/NoteStationClient/\d+(?:\.\d+)+-\d+/Mac/x86_64/synology-note-station-client-\d+(?:\.\d+)+-\d+-mac-x64\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://archive.synology.com/%download_page_part%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://global.download.synology.com/download/Utility/NoteStationClient/%version%/Mac/x86_64/synology-note-station-client-%version%-mac-x64.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

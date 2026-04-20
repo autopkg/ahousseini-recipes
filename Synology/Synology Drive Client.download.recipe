@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&gt;(\d+(?:\.\d+)*)-</string>
+				<string>download/Utility/SynologyDriveClient/\d+(?:\.\d+)+-\d+</string>
 				<key>result_output_var_name</key>
-				<string>url_version_part_1</string>
+				<string>download_page_part</string>
 				<key>url</key>
 				<string>https://archive.synology.com/download/Utility/SynologyDriveClient</string>
 			</dict>
@@ -32,11 +32,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&gt;(\d+(?:\.\d+)*)-(\d+)&lt;</string>
+				<string>https://global\.synologydownload\.com/download/Utility/SynologyDriveClient/\d+(?:\.\d+)+-\d+/Mac/Installer/synology-drive-client-\d+\.dmg</string>
 				<key>result_output_var_name</key>
-				<string>url_version_part_2</string>
+				<string>url</string>
 				<key>url</key>
-				<string>https://archive.synology.com/download/Utility/SynologyDriveClient</string>
+				<string>https://archive.synology.com/%download_page_part%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -46,8 +46,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://global.download.synology.com/download/Utility/SynologyDriveClient/%url_version_part_1%-%url_version_part_2%/Mac/Installer/synology-drive-client-%url_version_part_2%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
