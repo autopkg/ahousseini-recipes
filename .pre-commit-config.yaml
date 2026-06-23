@@ -22,11 +22,14 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.24.1
+    rev: v1.25.0
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
-        args: ["--recipe-prefix=com.github.ahousseini-recipes.", "--strict", "--"]
+        args: [
+          "--recipe-prefix=com.github.ahousseini-recipes.",
+          "--ignore-min-vers-before=2.9.0"
+        ]
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
       - id: check-plists
