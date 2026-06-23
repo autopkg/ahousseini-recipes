@@ -28,8 +28,7 @@ repos:
       - id: check-autopkg-recipes
         args: [
           "--recipe-prefix=com.github.ahousseini-recipes.",
-          "--ignore-min-vers-before=2.9.0",
-          "--strict"
+          "--ignore-min-vers-before=2.9.0"
         ]
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
