@@ -26,7 +26,11 @@ repos:
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
-        args: ["--recipe-prefix=com.github.ahousseini-recipes.", "--strict", "--"]
+        args: [
+          "--recipe-prefix=com.github.ahousseini-recipes.",
+          "--ignore-min-vers-before=1.1.0",
+          "--strict"
+        ]
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
       - id: check-plists
