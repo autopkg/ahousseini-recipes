@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>ARCH can be set to Apple or Intel.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Mersive Solstice and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.pkg.Mersive Solstice</string>
+	<string>com.github.ahousseini-recipes.pkg.MersiveSolstice</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>Intel</string>
 		<key>NAME</key>
 		<string>Mersive Solstice</string>
 	</dict>
@@ -91,7 +95,7 @@
 					<key>id</key>
 					<string>%bundleid%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>%NAME%-%ARCH%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 				</dict>
