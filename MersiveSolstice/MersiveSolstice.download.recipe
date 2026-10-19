@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>ARCH can be set to Apple or Intel.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Mersive Solstice.</string>
 	<key>Identifier</key>
 	<string>com.github.ahousseini-recipes.download.MersiveSolstice</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>Intel</string>
 		<key>NAME</key>
 		<string>Mersive Solstice</string>
 	</dict>
@@ -18,15 +22,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>href=\"(https://mersive\.com/downloads/SolsticeClient-\d+(?:\.\d+)+\.dmg)\" data-astro-cid-t5qh4vjv&gt;Mac %ARCH%</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://www.mersive.com/downloads</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>request_headers</key>
-				<dict>
-					<key>User-Agent</key>
-					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15</string>
-				</dict>
-				<key>url</key>
-				<string>https://www.mersive.com/files/41693/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
