@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://storage\.ergonis\.com/apps/production/popchar/archive/Pop_Char\d+(?:_\d+)+_Install_[0-9a-f]{10}.dmg</string>
+				<string>https://storage\.ergonis\.com/apps/production/popchar/archive/PopChar_\d+.zip</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
@@ -45,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -57,8 +57,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_path</key>
-				<string>%pathname%/PopChar.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/PopChar.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.macility.popchar3" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = TU7D9Y7GTQ)</string>
 			</dict>
