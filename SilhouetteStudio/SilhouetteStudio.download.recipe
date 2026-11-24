@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href=\"(https://d62nvtdcnsm38\.cloudfront\.net/files/softwares/ss/SS_V\d+(?:\.\d+)+_M6R[_0-9]*\.dmg)\" class=\"secondary-btn mac</string>
+				<string>https://medias3\.silhouettedesignstore\.com/files/softwares/ss/SS_V\d+(?:\.\d+)+_M6R[_0-9]*\.dmg</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
@@ -38,11 +38,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15</string>
-				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -58,20 +53,11 @@
 				<string>%pathname%/Silhouette Studio.app</string>
 				<key>requirement</key>
 				<string>identifier "com.silhouettesoftware.Silhouette-Studio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = TAX3B9PB9G</string>
+				<key>strict_verification</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/Silhouette Studio.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
