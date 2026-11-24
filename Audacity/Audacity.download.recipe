@@ -13,7 +13,7 @@
 		<key>ARCH</key>
 		<string>x86_64</string>
 		<key>NAME</key>
-		<string>Audacity</string>
+		<string>"Audacity 4"</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.1</string>
